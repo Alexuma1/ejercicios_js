@@ -34,10 +34,10 @@ const esEspacio = (texto="") =>
 
 // realizando las funciones pedidas en los problemas
 
-// const largoTexto = (texto) => console.log(`El numero de caracteres es: ${texto.length} de la palabra ${texto}`);
+const largoTexto = (texto) => console.log(`El numero de caracteres es: ${texto.length} de la palabra ${texto}`);
 const mostrarCaracteres = (texto,longitud) => console.log(texto.slice(0,longitud));
-// const convertirCaracteres = (texto, separador) => console.log(texto.split(separador));
-// const repetidor = (texto, count) => console.log(texto.repeat(count));
+const convertirCaracteres = (texto, separador) => console.log(texto.split(separador));
+const repetidor = (texto, count) => console.log(texto.repeat(count));
 
 
 // mostrando en consola las resoluciones primero si son textos
