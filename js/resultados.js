@@ -62,9 +62,18 @@ const miFuncion04 = (texto = "", numero = undefined) => {
         console.info(`El texto ingresado es: ${texto} y se repitio: ${i} veces`)
     }
 }
+
+const miFuncion05 = (texto ="")=>
+    (typeof texto != "string")
+    ? console.error('No es un texto, por favor ingresa un texto')
+    : (!texto)
+        ? console.warn('El texto esta vacio')
+        : console.info(`El texto ingresado es: ${texto} y su inversion es: ${texto.split("").reverse().join("")}`)
+
 // llamando a las funciones
 
 miFuncion01(valores.texto01)
 miFuncion02(valores.texto02, valores.longitud)
 miFuncion03(valores.texto03,valores.separador)
 miFuncion04(valores.texto04,valores.repetidor)
+miFuncion05(valores.texto05)
