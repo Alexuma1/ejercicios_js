@@ -74,8 +74,7 @@ const miFuncion06 = (texto = "", palabraRepetida="", separador="")=>{
     if (typeof texto != "string" && typeof palabraRepetida != "string"  && typeof separador != "string") console.error('No son textos, por favor ingresa solo textos')
     if (!texto && !palabraRepetida) console.warn('El texto esta vacio, debes ingresar textos')
     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
-    const palabrasAContar = texto.split(separador)
-    const palabrasRepetida = palabraRepetida.split(separador)
+    const palabrasAContar = texto.split(separador), palabrasRepetida = palabraRepetida.split(separador)
     let r = 0
     for(let i=0;i<=palabrasAContar.length;i++){
         if(palabrasAContar[i]===palabrasRepetida[0]) {
@@ -84,6 +83,8 @@ const miFuncion06 = (texto = "", palabraRepetida="", separador="")=>{
         }
     }
 }
+
+
 // llamando a las funciones
 
 // miFuncion01(valores.texto01)
@@ -92,3 +93,4 @@ const miFuncion06 = (texto = "", palabraRepetida="", separador="")=>{
 // miFuncion04(valores.texto04,valores.repetidor)
 // miFuncion05(valores.texto05)
 miFuncion06(valores.texto06,valores.palabraRepetida,valores.separador)
+
