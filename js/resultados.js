@@ -6,57 +6,65 @@ import { valores } from "./problemas.js";
 // constantes que comprueban si los datos ingresados son del tipo correcto:
 
 // los datos ingresados son del tipo texto:
+// const esTexto = (texto = "") => {
+//     if (typeof texto != "string") console.error('No es un texto, por favor ingresa un texto');
+//     if (!texto) console.warn('El texto esta vacio');
+// }
 
-const esTexto = (texto="") =>
-(typeof texto != "string")
-    ?console.warn('No es un texto, por favor ingresa un texto')
-    :(!texto)
-    ?console.warn('El texto esta vacio')
-    :console.info('Es un texto')
 
 // los datos ingresados son del tipo numero:
+// const esNumero = (numero = undefined) =>{
+//     if (typeof numero != 'number') console.warn('No es un numero, por favor ingresa un numero')
+//     if (numero === 0) console.error('Ingresa un numero mayor a 0')
+//     if (Math.sign(numero)===-1) console.error('Ingresaste un numero negativo, ingresa un numero positivo')
+// }
 
-const esNumero = (numero=undefined) =>
-(typeof numero != 'number')
-    ?console.warn('No es un numero, por favor ingresa un numero')
-    :(numero===0)
-    ?console.warn('Ingresa un numero mayor a 0')
-    :console.info('Es un numero')
-
-// los datos ingresados son del tipo cadena vacia:
-const esEspacio = (texto="") =>
-(typeof texto != "string")
-    ?console.warn('No es un texto, por favor ingresa un texto')
-    :(texto!=' ')
-    ?console.warn('No es un espacio por favor ingresa un espacio en blanco')
-    :console.info('Es un espacio en blanco')
+// los datos ingresados son los del separador indicado:
+// const esSeparador = (separador = "") =>{
+//     if (typeof separador != "string") console.warn('No es el separador que se esperaba, el esperado es tipo " "')
+//     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
+// }
 
 
 // realizando las funciones pedidas en los problemas
 
-const largoTexto = (texto) => console.log(`El numero de caracteres es: ${texto.length} de la palabra ${texto}`);
-const mostrarCaracteres = (texto,longitud) => console.log(texto.slice(0,longitud));
-const convertirCaracteres = (texto, separador) => console.log(texto.split(separador));
-const repetidor = (texto, count) => console.log(texto.repeat(count));
+const miFuncion01 = (texto = "") =>
+    (typeof texto != "string")
+        ? console.error('No es un texto, por favor ingresa un texto')
+        : (!texto)
+            ? console.warn('El texto esta vacio')
+            : console.info(`El texto ingresado es: ${texto} y tiene: ${texto.length} caracteres`)
 
+const miFuncion02 = (texto = "", numero = undefined) => {
+    if (typeof texto != "string") console.warn('No es un texto, por favor ingresa un texto')
+    if (!texto) console.error('El texto esta vacio')
+    if (typeof numero != 'number') console.warn('No es un numero, por favor ingresa un numero')
+    if (numero === 0) console.error('Ingresa un numero mayor a 0')
+    if (Math.sign(numero) === -1) console.error('Ingresaste un numero negativo, ingresa un numero positivo')
+    console.info(`El texto a cortar es: ${texto} y la cantidad cortada es: ${numero} y quedaria asi: ${texto.slice(0, numero)}`)
+}
 
-// mostrando en consola las resoluciones primero si son textos
+const miFuncion03 = (texto = "", separador = "") => {
+    if (typeof texto != "string") console.warn('No es un texto, por favor ingresa un texto')
+    if (!texto) console.error('El texto esta vacio')
+    if (typeof separador != "string") console.warn('No es el separador que se esperaba, el esperado es tipo " "')
+    if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
+    console.info(`El texto a devolver en array es: ${texto} y el separador es: ${separador} y quedaria asi: ${texto.split(separador)}`)
+}
 
+const miFuncion04 = (texto = "", numero = undefined) => {
+    if (typeof texto != "string") console.warn('No es un texto, por favor ingresa un texto')
+    if (!texto) console.error('El texto esta vacio')
+    if (typeof numero != 'number') console.warn('No es un numero, por favor ingresa un numero')
+    if (numero === 0) console.error('Ingresa un numero mayor a 0')
+    if (Math.sign(numero) === -1) console.error('Ingresaste un numero negativo, ingresa un numero positivo')
+    for(let i=1;i<=numero;i++){
+        console.info(`El texto ingresado es: ${texto} y se repitio: ${i} veces`)
+    }
+}
+// llamando a las funciones
 
-// const mostrarEnConsola = (esTexto=true&&esNumero==true) => mostrarCaracteres(valores.texto02,valores.longitud);
-esTexto(valores.texto01);
-esTexto(valores.texto02);
-esTexto(valores.texto03);
-esTexto(valores.texto04);
-
-esNumero(valores.longitud);
-esEspacio(valores.espacio);
-esNumero(valores.contador);
-// mostrarEnConsola();
-
-// mostrando en consola las resoluciones segundo las resoluciones a los problemas
-
-largoTexto(valores.texto01);
-mostrarCaracteres(valores.texto02,valores.longitud);
-convertirCaracteres(valores.texto03,valores.espacio);
-repetidor(valores.texto04, valores.contador);
+miFuncion01(valores.texto01)
+miFuncion02(valores.texto02, valores.longitud)
+miFuncion03(valores.texto03,valores.separador)
+miFuncion04(valores.texto04,valores.repetidor)
