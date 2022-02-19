@@ -45,9 +45,8 @@ const miFuncion02 = (texto = "", numero = undefined) => {
 }
 
 const miFuncion03 = (texto = "", separador = "") => {
-    if (typeof texto != "string") console.warn('No es un texto, por favor ingresa un texto')
+    if (typeof texto != "string" && typeof separador != "string") console.warn('No es un texto, por favor ingresa un texto')
     if (!texto) console.error('El texto esta vacio')
-    if (typeof separador != "string") console.warn('No es el separador que se esperaba, el esperado es tipo " "')
     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
     console.info(`El texto a devolver en array es: ${texto} y el separador es: ${separador} y quedaria asi: ${texto.split(separador)}`)
 }
@@ -70,10 +69,26 @@ const miFuncion05 = (texto ="")=>
         ? console.warn('El texto esta vacio')
         : console.info(`El texto ingresado es: ${texto} y su inversion es: ${texto.split("").reverse().join("")}`)
 
+
+const miFuncion06 = (texto = "", palabraRepetida="", separador="")=>{
+    if (typeof texto != "string" && typeof palabraRepetida != "string"  && typeof separador != "string") console.error('No son textos, por favor ingresa solo textos')
+    if (!texto && !palabraRepetida) console.warn('El texto esta vacio, debes ingresar textos')
+    if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
+    const palabrasAContar = texto.split(separador)
+    const palabrasRepetida = palabraRepetida.split(separador)
+    let r = 0
+    for(let i=0;i<=palabrasAContar.length;i++){
+        if(palabrasAContar[i]===palabrasRepetida[0]) {
+            r++
+            console.log(`El numero de repeticiones fueron: ${r}`)
+        }
+    }
+}
 // llamando a las funciones
 
-miFuncion01(valores.texto01)
-miFuncion02(valores.texto02, valores.longitud)
-miFuncion03(valores.texto03,valores.separador)
-miFuncion04(valores.texto04,valores.repetidor)
-miFuncion05(valores.texto05)
+// miFuncion01(valores.texto01)
+// miFuncion02(valores.texto02, valores.longitud)
+// miFuncion03(valores.texto03,valores.separador)
+// miFuncion04(valores.texto04,valores.repetidor)
+// miFuncion05(valores.texto05)
+miFuncion06(valores.texto06,valores.palabraRepetida,valores.separador)
