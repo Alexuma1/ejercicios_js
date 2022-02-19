@@ -57,31 +57,50 @@ const miFuncion04 = (texto = "", numero = undefined) => {
     if (typeof numero != 'number') console.warn('No es un numero, por favor ingresa un numero')
     if (numero === 0) console.error('Ingresa un numero mayor a 0')
     if (Math.sign(numero) === -1) console.error('Ingresaste un numero negativo, ingresa un numero positivo')
-    for(let i=1;i<=numero;i++){
+    for (let i = 1; i <= numero; i++) {
         console.info(`El texto ingresado es: ${texto} y se repitio: ${i} veces`)
     }
 }
 
-const miFuncion05 = (texto ="")=>
+const miFuncion05 = (texto = "") =>
     (typeof texto != "string")
-    ? console.error('No es un texto, por favor ingresa un texto')
-    : (!texto)
-        ? console.warn('El texto esta vacio')
-        : console.info(`El texto ingresado es: ${texto} y su inversion es: ${texto.split("").reverse().join("")}`)
+        ? console.error('No es un texto, por favor ingresa un texto')
+        : (!texto)
+            ? console.warn('El texto esta vacio')
+            : console.info(`El texto ingresado es: ${texto} y su inversion es: ${texto.split("").reverse().join("")}`)
 
 
-const miFuncion06 = (texto = "", palabraRepetida="", separador="")=>{
-    if (typeof texto != "string" && typeof palabraRepetida != "string"  && typeof separador != "string") console.error('No son textos, por favor ingresa solo textos')
+const miFuncion06 = (texto = "", palabraRepetida = "", separador = "") => {
+    if (typeof texto != "string" && typeof palabraRepetida != "string" && typeof separador != "string") console.error('No son textos, por favor ingresa solo textos')
     if (!texto && !palabraRepetida) console.warn('El texto esta vacio, debes ingresar textos')
     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
     const palabrasAContar = texto.split(separador), palabrasRepetida = palabraRepetida.split(separador)
     let r = 0
-    for(let i=0;i<=palabrasAContar.length;i++){
-        if(palabrasAContar[i]===palabrasRepetida[0]) {
+    for (let i = 0; i <= palabrasAContar.length; i++) {
+        if (palabrasAContar[i] === palabrasRepetida[0]) {
             r++
             console.log(`El numero de repeticiones fueron: ${r}`)
         }
     }
+}
+
+const miFuncion07 = (texto = "", boolean = false,separador="") => {
+    if (typeof texto != "string" && typeof separador != "string") console.error('No es un texto, por favor ingresa un texto')
+    if (!texto) console.warn('El texto esta vacio')
+    if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
+    const invertirTexto = texto.split("").reverse().join("")
+    const textoSinInvertir = texto.split(separador)
+    const textoInvertido = invertirTexto.split(separador)
+    for(let i=0;i<textoSinInvertir.length;i++){
+        for(let a=0;a<textoInvertido.length;a++){
+            if(textoSinInvertir[i]===textoInvertido[a]){
+                console.log(`Hay coincidencia ${textoInvertido[a]} es igual a ${textoSinInvertir[i]}`)
+                boolean = true;
+            }
+        }
+    }
+    console.info(`Hay palindromos: ${boolean}`)
+    return true
 }
 
 
@@ -92,5 +111,5 @@ const miFuncion06 = (texto = "", palabraRepetida="", separador="")=>{
 // miFuncion03(valores.texto03,valores.separador)
 // miFuncion04(valores.texto04,valores.repetidor)
 // miFuncion05(valores.texto05)
-miFuncion06(valores.texto06,valores.palabraRepetida,valores.separador)
-
+// miFuncion06(valores.texto06,valores.palabraRepetida,valores.separador)
+miFuncion07(valores.texto07, valores.esPalindromo,valores.separador)
