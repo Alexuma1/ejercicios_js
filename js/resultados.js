@@ -86,6 +86,7 @@ const miFuncion06 = (texto = "", palabraRepetida = "", separador = "") => {
 
 const miFuncion07 = (texto = "", boolean = false,separador="") => {
     if (typeof texto != "string" && typeof separador != "string") console.error('No es un texto, por favor ingresa un texto')
+    if (typeof boolean!= "boolean") console.warn('debes ingresar un tipo de dato booleano')
     if (!texto) console.warn('El texto esta vacio')
     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
     const invertirTexto = texto.split("").reverse().join("")
@@ -112,4 +113,5 @@ const miFuncion07 = (texto = "", boolean = false,separador="") => {
 // miFuncion04(valores.texto04,valores.repetidor)
 // miFuncion05(valores.texto05)
 // miFuncion06(valores.texto06,valores.palabraRepetida,valores.separador)
-miFuncion07(valores.texto07, valores.esPalindromo,valores.separador)
+// miFuncion07(valores.texto07, valores.esPalindromo,valores.separador)
+
