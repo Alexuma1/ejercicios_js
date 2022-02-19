@@ -89,6 +89,7 @@ const miFuncion07 = (texto = "", boolean = false, separador = "") => {
     if (typeof boolean != "boolean") console.warn('debes ingresar un tipo de dato booleano')
     if (!texto) console.warn('El texto esta vacio')
     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
+    texto=texto.toLowerCase()
     const invertirTexto = texto.split("").reverse().join("")
     const textoSinInvertir = texto.split(separador)
     const textoInvertido = invertirTexto.split(separador)
@@ -122,6 +123,6 @@ const miFuncion08 = (texto = "", patron = "") => {
 // miFuncion04(valores.texto04,valores.repetidor)
 // miFuncion05(valores.texto05)
 // miFuncion06(valores.texto06,valores.palabraRepetida,valores.separador)
-// miFuncion07(valores.texto07, valores.esPalindromo,valores.separador)
-miFuncion08(valores.texto08, valores.patron)
+miFuncion07(valores.texto07, valores.esPalindromo,valores.separador)
+// miFuncion08(valores.texto08, valores.patron)
 
