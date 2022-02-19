@@ -84,17 +84,17 @@ const miFuncion06 = (texto = "", palabraRepetida = "", separador = "") => {
     }
 }
 
-const miFuncion07 = (texto = "", boolean = false,separador="") => {
+const miFuncion07 = (texto = "", boolean = false, separador = "") => {
     if (typeof texto != "string" && typeof separador != "string") console.error('No es un texto, por favor ingresa un texto')
-    if (typeof boolean!= "boolean") console.warn('debes ingresar un tipo de dato booleano')
+    if (typeof boolean != "boolean") console.warn('debes ingresar un tipo de dato booleano')
     if (!texto) console.warn('El texto esta vacio')
     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
     const invertirTexto = texto.split("").reverse().join("")
     const textoSinInvertir = texto.split(separador)
     const textoInvertido = invertirTexto.split(separador)
-    for(let i=0;i<textoSinInvertir.length;i++){
-        for(let a=0;a<textoInvertido.length;a++){
-            if(textoSinInvertir[i]===textoInvertido[a]){
+    for (let i = 0; i < textoSinInvertir.length; i++) {
+        for (let a = 0; a < textoInvertido.length; a++) {
+            if (textoSinInvertir[i] === textoInvertido[a]) {
                 console.log(`Hay coincidencia ${textoInvertido[a]} es igual a ${textoSinInvertir[i]}`)
                 boolean = true;
             }
@@ -104,7 +104,16 @@ const miFuncion07 = (texto = "", boolean = false,separador="") => {
     return true
 }
 
-
+const miFuncion08 = (texto = "", patron = "") => {
+    if (typeof texto != "string" && typeof patron != "string") console.error('No es un texto, por favor ingresa un texto')
+    if (!texto && !patron) console.warm('El texto esta vacio')
+    const textoACambiar = /xyz/gi
+    console.log(`La frase que queremos cambiar es: ${texto} eliminando el patron: ${patron} y quedaria asi ${texto.replace(textoACambiar,"")}`)
+}
+// var re = /apples/gi;
+// var str = "Apples are round, and apples are juicy.";
+// var newstr = str.replace(re, "oranges");
+// console.log(newstr);
 // llamando a las funciones
 
 // miFuncion01(valores.texto01)
@@ -114,4 +123,5 @@ const miFuncion07 = (texto = "", boolean = false,separador="") => {
 // miFuncion05(valores.texto05)
 // miFuncion06(valores.texto06,valores.palabraRepetida,valores.separador)
 // miFuncion07(valores.texto07, valores.esPalindromo,valores.separador)
+miFuncion08(valores.texto08, valores.patron)
 
