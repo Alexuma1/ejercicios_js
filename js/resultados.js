@@ -45,7 +45,7 @@ const miFuncion02 = (texto = "", numero = undefined) => {
 }
 
 const miFuncion03 = (texto = "", separador = "") => {
-    if (typeof texto != "string" && typeof separador != "string") console.warn('No es un texto, por favor ingresa un texto')
+    if (typeof texto != "string" || typeof separador != "string") console.warn('No es un texto, por favor ingresa un texto')
     if (!texto) console.error('El texto esta vacio')
     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
     console.info(`El texto a devolver en array es: ${texto} y el separador es: ${separador} y quedaria asi: ${texto.split(separador)}`)
@@ -71,8 +71,8 @@ const miFuncion05 = (texto = "") =>
 
 
 const miFuncion06 = (texto = "", palabraRepetida = "", separador = "") => {
-    if (typeof texto != "string" && typeof palabraRepetida != "string" && typeof separador != "string") console.error('No son textos, por favor ingresa solo textos')
-    if (!texto && !palabraRepetida) console.warn('El texto esta vacio, debes ingresar textos')
+    if (typeof texto != "string" || typeof palabraRepetida != "string" || typeof separador != "string") console.error('No son textos, por favor ingresa solo textos')
+    if (!texto || !palabraRepetida) console.warn('El texto esta vacio, debes ingresar textos')
     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
     const palabrasAContar = texto.split(separador), palabrasRepetida = palabraRepetida.split(separador)
     let r = 0
@@ -85,7 +85,7 @@ const miFuncion06 = (texto = "", palabraRepetida = "", separador = "") => {
 }
 
 const miFuncion07 = (texto = "", boolean = false, separador = "") => {
-    if (typeof texto != "string" && typeof separador != "string") console.error('No es un texto, por favor ingresa un texto')
+    if (typeof texto != "string" || typeof separador != "string") console.error('No es un texto, por favor ingresa un texto')
     if (typeof boolean != "boolean") console.warn('debes ingresar un tipo de dato booleano')
     if (!texto) console.warn('El texto esta vacio')
     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
@@ -106,11 +106,20 @@ const miFuncion07 = (texto = "", boolean = false, separador = "") => {
 }
 
 const miFuncion08 = (texto = "", patron = "") => {
-    if (typeof texto != "string" && typeof patron != "string") console.error('No es un texto, por favor ingresa un texto')
-    if (!texto && !patron) console.warm('El texto esta vacio')
+    if (typeof texto != "string" || typeof patron != "string") console.error('No es un texto, por favor ingresa un texto')
+    if (!texto || !patron) console.warm('El texto esta vacio')
     const textoACambiar = /xyz/gi
     console.log(`La frase que queremos cambiar es: ${texto} eliminando el patron: ${patron} y quedaria asi ${texto.replace(textoACambiar,"")}`)
 }
+
+const miFuncion09 = (min,max)=> {
+    if (typeof min != 'number' || typeof max != 'number') {console.warn('No es un numero, por favor ingresa un numero'); return}
+    if (min === 0 || max === 0) {console.error('Ingresa un numero mayor a 0') ; return}
+    if (Math.sign(min)===-1 || Math.sign(max)===-1) {console.error('Ingresaste un numero negativo, ingresa un numero positivo'); return}
+    let aleatorio = Math.floor(Math.random() * (max - min)) + min;
+    console.log(aleatorio)
+}
+
 // var re = /apples/gi;
 // var str = "Apples are round, and apples are juicy.";
 // var newstr = str.replace(re, "oranges");
@@ -123,6 +132,7 @@ const miFuncion08 = (texto = "", patron = "") => {
 // miFuncion04(valores.texto04,valores.repetidor)
 // miFuncion05(valores.texto05)
 // miFuncion06(valores.texto06,valores.palabraRepetida,valores.separador)
-miFuncion07(valores.texto07, valores.esPalindromo,valores.separador)
+// miFuncion07(valores.texto07, valores.esPalindromo,valores.separador)
 // miFuncion08(valores.texto08, valores.patron)
+miFuncion09(valores.minimo,valores.maximo)
 
