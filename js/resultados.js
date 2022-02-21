@@ -176,6 +176,12 @@ const miFuncion12 = (numero) => {
     }
 }
 
+const miFuncion13 = (numero)=>{
+    if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
+    if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
+    if (numero % 2 === 0)console.log('es par')
+    else console.log('es impar')
+}
 // llamando a las funciones
 
 // miFuncion01(valores.texto01)
@@ -189,4 +195,5 @@ const miFuncion12 = (numero) => {
 // miFuncion09(valores.minimo,valores.maximo)
 // miFuncion10(valores.numero)
 // miFuncion11(valores.numeroFactorial)
-miFuncion12(valores.numeroPrimo)
+// miFuncion12(valores.numeroPrimo)
+miFuncion13(valores.numeroParImpar)
