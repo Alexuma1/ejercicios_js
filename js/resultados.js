@@ -11,12 +11,20 @@ import { valores } from "./problemas.js";
 //     if (!texto) console.warn('El texto esta vacio');
 // }
 
+// Comprobaciones numeros:
+// const comprobacionNumero = (valor1 = undefined) =>{
+// if (typeof valor1 != 'number') return console.warn(`No ingresaste un numero: ${valor1} , ingresa un numero`)
+// if (valor1 === 0) return console.error(`Ingresaste un numero: ${valor1} igual a 0, ingresa un numero mayor`)
+// if (Math.sign(valor1)===-1)return console.error(`Ingresaste un numero: ${valor1} nagativo, ingresa un numero positivo`)
+// }
 
-// los datos ingresados son del tipo numero:
-// const esNumero = (numero = undefined) =>{
-//     if (typeof numero != 'number') console.warn('No es un numero, por favor ingresa un numero')
-//     if (numero === 0) console.error('Ingresa un numero mayor a 0')
-//     if (Math.sign(numero)===-1) console.error('Ingresaste un numero negativo, ingresa un numero positivo')
+// const DobleComprobacionNumero = (valor1 = undefined , valor2 = undefined) =>{
+//     if (typeof valor1 != 'number') return console.warn(`No ingresaste un numero: ${valor1} , ingresa un numero`)
+//     if (valor1 === 0) return console.error(`Ingresaste un numero: ${valor1} igual a 0, ingresa un numero mayor`)
+//     if (Math.sign(valor1)===-1)return console.error(`Ingresaste un numero: ${valor1} nagativo, ingresa un numero positivo`)
+//     if (typeof valor2 != 'number') return console.warn(`No ingresaste un numero: ${valor2} , ingresa un numero`)
+//     if (valor2 === 0) return console.error(`Ingresaste un numero: ${valor2} igual a 0, ingresa un numero mayor`)
+//     if (Math.sign(valor2)===-1)return console.error(`Ingresaste un numero: ${valor2} nagativo, ingresa un numero positivo`)
 // }
 
 // los datos ingresados son los del separador indicado:
@@ -112,10 +120,13 @@ const miFuncion08 = (texto = "", patron = "") => {
     console.log(`La frase que queremos cambiar es: ${texto} eliminando el patron: ${patron} y quedaria asi ${texto.replace(textoACambiar,"")}`)
 }
 
-const miFuncion09 = (min,max)=> {
-    if (typeof min != 'number' || typeof max != 'number') {console.warn('No es un numero, por favor ingresa un numero'); return}
-    if (min === 0 || max === 0) {console.error('Ingresa un numero mayor a 0') ; return}
-    if (Math.sign(min)===-1 || Math.sign(max)===-1) {console.error('Ingresaste un numero negativo, ingresa un numero positivo'); return}
+const miFuncion09 = (min = undefined,max= undefined)=> {
+    if (typeof min != 'number') return console.warn(`No ingresaste un numero: ${min} , ingresa un numero`)
+    if (min === 0) return console.error(`Ingresaste un numero: ${min} igual a 0, ingresa un numero mayor`)
+    if (Math.sign(min)===-1)return console.error(`Ingresaste un numero: ${min} nagativo, ingresa un numero positivo`)
+    if (typeof max != 'number') return console.warn(`No ingresaste un numero: ${max} , ingresa un numero`)
+    if (max === 0) return console.error(`Ingresaste un numero: ${max} igual a 0, ingresa un numero mayor`)
+    if (Math.sign(max)===-1)return console.error(`Ingresaste un numero: ${min} nagativo, ingresa un numero positivo`)
     let aleatorio = Math.floor(Math.random() * (max - min)) + min;
     console.log(aleatorio)
 }
@@ -134,5 +145,4 @@ const miFuncion09 = (min,max)=> {
 // miFuncion06(valores.texto06,valores.palabraRepetida,valores.separador)
 // miFuncion07(valores.texto07, valores.esPalindromo,valores.separador)
 // miFuncion08(valores.texto08, valores.patron)
-miFuncion09(valores.minimo,valores.maximo)
-
+// miFuncion09(valores.minimo,valores.maximo)
