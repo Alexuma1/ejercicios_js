@@ -161,23 +161,26 @@ const miFuncion12 = (numero) => {
     if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
     let coincidencias = false
     if (Math.sign(numero) === -1) {
-        for (let i = 0; i > numero; i--) {
+        for (let i = -2; i > numero; i--) {
+            console.log(i)
+            console.log(coincidencias)
             if (numero % i === 0) {
                 coincidencias=true
                 break
             }
         }
-        if (coincidencias > 1) console.log(`El numero ${numero} No es un numero Primo`)
+        console.log(coincidencias)
+        if (coincidencias==true) console.log(`El numero ${numero} No es un numero Primo`)
         else console.log(`El numero ${numero} es un numero Primo`)
     }
     if (Math.sign(numero) != -1) {
-        for (let i = 0; i < numero; i++) {
+        for (let i = 2; i < numero; i++) {
             if (numero % i === 0) {
                 coincidencias=true
                 break
             }
         }
-        if (coincidencias > 1) console.log(`El numero ${numero} No es un numero Primo`)
+        if (coincidencias==true) console.log(`El numero ${numero} No es un numero Primo`)
         else console.log(`El numero ${numero} es un numero Primo`)
     }
 }
@@ -212,6 +215,6 @@ const miFuncion14 = (numero=undefined,texto='')=>{
 // miFuncion09(valores.minimo,valores.maximo)
 // miFuncion10(valores.numero)
 // miFuncion11(valores.numeroFactorial)
-// miFuncion12(valores.numeroPrimo)
+miFuncion12(valores.numeroPrimo)
 // miFuncion13(valores.numeroParImpar)
-miFuncion14(valores.grados,valores.medida)
+// miFuncion14(valores.grados,valores.medida)
