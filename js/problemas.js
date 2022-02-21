@@ -56,12 +56,15 @@ const numeroPrimo = 13;
 
 // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
 
-const numeroParImpar = -18
+const numeroParImpar = -18;
 
 // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+
+const grados = 0;
+const medida = '°C'
 
 // exportando los textos que eh ingresado, para resolverlos.
 
 export const valores ={
-    texto01,texto02,texto03,texto04,longitud,separador,repetidor,texto05,texto06,palabraRepetida,texto07,esPalindromo,texto08,patron,minimo,maximo,numero,numeroFactorial,numeroPrimo,numeroParImpar
+    texto01,texto02,texto03,texto04,longitud,separador,repetidor,texto05,texto06,palabraRepetida,texto07,esPalindromo,texto08,patron,minimo,maximo,numero,numeroFactorial,numeroPrimo,numeroParImpar,grados,medida
 }

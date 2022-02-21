@@ -176,11 +176,22 @@ const miFuncion12 = (numero) => {
     }
 }
 
-const miFuncion13 = (numero)=>{
+const miFuncion13 = (numero=undefined)=>{
     if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
     if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
     if (numero % 2 === 0)console.log('es par')
     else console.log('es impar')
+}
+
+const miFuncion14 = (numero=undefined,texto='')=>{
+    if (typeof texto != "string") console.error('No es un texto, por favor ingresa un texto');
+    if (!texto) console.warn('El texto esta vacio');
+    if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
+    const fahrenheit = (numero*9/5)+32
+    const celsius = (numero - 32)*5/9
+    texto = texto.toUpperCase()
+    if(texto==='°C')console.log(fahrenheit+' °F')
+    else console.log(celsius+' °C')
 }
 // llamando a las funciones
 
@@ -196,4 +207,5 @@ const miFuncion13 = (numero)=>{
 // miFuncion10(valores.numero)
 // miFuncion11(valores.numeroFactorial)
 // miFuncion12(valores.numeroPrimo)
-miFuncion13(valores.numeroParImpar)
+// miFuncion13(valores.numeroParImpar)
+miFuncion14(valores.grados,valores.medida)
