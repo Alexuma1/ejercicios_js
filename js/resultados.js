@@ -159,17 +159,23 @@ const miFuncion11 = (numero = undefined) => {
 const miFuncion12 = (numero) => {
     if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
     if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
-    let coincidencias = 0
+    let coincidencias = false
     if (Math.sign(numero) === -1) {
         for (let i = 0; i > numero; i--) {
-            if (numero % i === 0) coincidencias++
+            if (numero % i === 0) {
+                coincidencias=true
+                break
+            }
         }
         if (coincidencias > 1) console.log(`El numero ${numero} No es un numero Primo`)
         else console.log(`El numero ${numero} es un numero Primo`)
     }
     if (Math.sign(numero) != -1) {
         for (let i = 0; i < numero; i++) {
-            if (numero % i === 0) coincidencias++
+            if (numero % i === 0) {
+                coincidencias=true
+                break
+            }
         }
         if (coincidencias > 1) console.log(`El numero ${numero} No es un numero Primo`)
         else console.log(`El numero ${numero} es un numero Primo`)
