@@ -137,7 +137,23 @@ const miFuncion10 = (numero = undefined) => {
     if (Math.sign(numero) === -1) return console.error(`Ingresaste un numero: ${numero} nagativo, ingresa un numero positivo`)
     const numeroAInver = numero.toString().split("").reverse().join("")
     const numeroInvertido = parseInt(numeroAInver)
-    if (numero === numeroInvertido)console.info(`El numero ${numero} es igual a el numero ${numeroInvertido} es capicua`)
+    if (numero === numeroInvertido) console.info(`El numero ${numero} es igual a el numero ${numeroInvertido} es capicua`)
+    else {
+        console.info(`El numero ${numero} no es igual a el numero ${numeroInvertido} no son capicua`)
+    }
+}
+
+const miFuncion11 = (numero = undefined) => {
+    if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
+    if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
+    if (Math.sign(numero) === -1) return console.error(`Ingresaste un numero: ${numero} nagativo, ingresa un numero positivo`)
+    let factorial = 1
+    let numeroFactorial = numero
+    do{
+        numeroFactorial = numeroFactorial * factorial;
+        factorial++;
+    }while(numero>factorial)
+    console.info(`El numero factorial de ${numero} es: ${numeroFactorial}`)
 }
 // var re = /apples/gi;
 // var str = "Apples are round, and apples are juicy.";
@@ -155,3 +171,4 @@ const miFuncion10 = (numero = undefined) => {
 // miFuncion08(valores.texto08, valores.patron)
 // miFuncion09(valores.minimo,valores.maximo)
 // miFuncion10(valores.numero)
+miFuncion11(valores.numeroFactorial)

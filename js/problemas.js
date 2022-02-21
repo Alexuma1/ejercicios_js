@@ -48,8 +48,10 @@ const numero = 505;
 
 // 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
 
+const numeroFactorial = 5;
+
 // exportando los textos que eh ingresado, para resolverlos.
 
 export const valores ={
-    texto01,texto02,texto03,texto04,longitud,separador,repetidor,texto05,texto06,palabraRepetida,texto07,esPalindromo,texto08,patron,minimo,maximo,numero
+    texto01,texto02,texto03,texto04,longitud,separador,repetidor,texto05,texto06,palabraRepetida,texto07,esPalindromo,texto08,patron,minimo,maximo,numero,numeroFactorial
 }
