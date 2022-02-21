@@ -196,11 +196,12 @@ const miFuncion14 = (numero=undefined,texto='')=>{
     if (typeof texto != "string") console.error('No es un texto, por favor ingresa un texto');
     if (!texto) console.warn('El texto esta vacio');
     if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
+    texto = texto.toUpperCase()
+    if(texto.length !==1 || !/(C|F)/.test(texto))return console.warn('Valor de la unidad no reconocido')
     const fahrenheit = (numero*9/5)+32
     const celsius = (numero - 32)*5/9
-    texto = texto.toUpperCase()
-    if(texto==='°C')console.log(fahrenheit+' °F')
-    else console.log(celsius+' °C')
+    if(texto==='C')console.log(`${numero}°C = ${fahrenheit}°F`)
+    else console.log(`${numero}°F = ${celsius}°C`)
 }
 // llamando a las funciones
 
@@ -209,12 +210,12 @@ const miFuncion14 = (numero=undefined,texto='')=>{
 // miFuncion03(valores.texto03,valores.separador)
 // miFuncion04(valores.texto04,valores.repetidor)
 // miFuncion05(valores.texto05)
-// miFuncion06(valores.texto06,valores.palabraRepetida,valores.separador)
+// miFuncion06(valores.texto06,valores.palabra Repetida,valores.separador)
 // miFuncion07(valores.texto07, valores.esPalindromo,valores.separador)
 // miFuncion08(valores.texto08, valores.patron)
 // miFuncion09(valores.minimo,valores.maximo)
 // miFuncion10(valores.numero)
 // miFuncion11(valores.numeroFactorial)
-miFuncion12(valores.numeroPrimo)
+// miFuncion12(valores.numeroPrimo)
 // miFuncion13(valores.numeroParImpar)
-// miFuncion14(valores.grados,valores.medida)
+miFuncion14(valores.grados,valores.medida)
