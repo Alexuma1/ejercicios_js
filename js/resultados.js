@@ -97,7 +97,7 @@ const miFuncion07 = (texto = "", boolean = false, separador = "") => {
     if (typeof boolean != "boolean") console.warn('debes ingresar un tipo de dato booleano')
     if (!texto) console.warn('El texto esta vacio')
     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
-    texto=texto.toLowerCase()
+    texto = texto.toLowerCase()
     const invertirTexto = texto.split("").reverse().join("")
     const textoSinInvertir = texto.split(separador)
     const textoInvertido = invertirTexto.split(separador)
@@ -117,20 +117,28 @@ const miFuncion08 = (texto = "", patron = "") => {
     if (typeof texto != "string" || typeof patron != "string") console.error('No es un texto, por favor ingresa un texto')
     if (!texto || !patron) console.warm('El texto esta vacio')
     const textoACambiar = /xyz/gi
-    console.log(`La frase que queremos cambiar es: ${texto} eliminando el patron: ${patron} y quedaria asi ${texto.replace(textoACambiar,"")}`)
+    console.log(`La frase que queremos cambiar es: ${texto} eliminando el patron: ${patron} y quedaria asi ${texto.replace(textoACambiar, "")}`)
 }
 
-const miFuncion09 = (min = undefined,max= undefined)=> {
+const miFuncion09 = (min = undefined, max = undefined) => {
     if (typeof min != 'number') return console.warn(`No ingresaste un numero: ${min} , ingresa un numero`)
     if (min === 0) return console.error(`Ingresaste un numero: ${min} igual a 0, ingresa un numero mayor`)
-    if (Math.sign(min)===-1)return console.error(`Ingresaste un numero: ${min} nagativo, ingresa un numero positivo`)
+    if (Math.sign(min) === -1) return console.error(`Ingresaste un numero: ${min} nagativo, ingresa un numero positivo`)
     if (typeof max != 'number') return console.warn(`No ingresaste un numero: ${max} , ingresa un numero`)
     if (max === 0) return console.error(`Ingresaste un numero: ${max} igual a 0, ingresa un numero mayor`)
-    if (Math.sign(max)===-1)return console.error(`Ingresaste un numero: ${min} nagativo, ingresa un numero positivo`)
+    if (Math.sign(max) === -1) return console.error(`Ingresaste un numero: ${min} nagativo, ingresa un numero positivo`)
     let aleatorio = Math.floor(Math.random() * (max - min)) + min;
     console.log(aleatorio)
 }
 
+const miFuncion10 = (numero = undefined) => {
+    if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
+    if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
+    if (Math.sign(numero) === -1) return console.error(`Ingresaste un numero: ${numero} nagativo, ingresa un numero positivo`)
+    const numeroAInver = numero.toString().split("").reverse().join("")
+    const numeroInvertido = parseInt(numeroAInver)
+    if (numero === numeroInvertido)console.info(`El numero ${numero} es igual a el numero ${numeroInvertido} es capicua`)
+}
 // var re = /apples/gi;
 // var str = "Apples are round, and apples are juicy.";
 // var newstr = str.replace(re, "oranges");
@@ -146,3 +154,4 @@ const miFuncion09 = (min = undefined,max= undefined)=> {
 // miFuncion07(valores.texto07, valores.esPalindromo,valores.separador)
 // miFuncion08(valores.texto08, valores.patron)
 // miFuncion09(valores.minimo,valores.maximo)
+// miFuncion10(valores.numero)
