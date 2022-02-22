@@ -231,23 +231,23 @@ const miFuncion16 = (numero=undefined, porcentaje=undefined)=>{
     if (porcentaje === 0) return console.error(`Ingresaste un numero: ${porcentaje} igual a 0, ingresa un numero mayor`)
     if (Math.sign(porcentaje) === -1) return console.error(`Ingresaste un numero: ${porcentaje} nagativo, ingresa un numero positivo`)
 
-    const descuento = numero*(porcentaje/100)
-    const compraConDescuento = numero-descuento
+    const compraConDescuento = numero-((numero*porcentaje)/100)
     console.info(`Se aplico su descuento de ${porcentaje}% y el monto total a pagar es: ${compraConDescuento}`)
 }
-
+ 
 const miFuncion17 = (fecha) =>{
-    if (fecha === 0) return console.error(`Ingresaste un numero: ${fecha} igual a 0, ingresa un numero mayor`)
-    console.log(fecha)
-    const hoy = new Date()
-    var tiempoAPasado = hoy.getFullYear() - fecha.getFullYear()
-    var m = hoy.getMonth() - fecha.getMonth()
-    
-    if (m < 0 || (m === 0 && hoy.getDate() < fecha.getDate())) {
-        tiempoAPasado--;
-    }
-    console.log(tiempoAPasado)
-    console.log(hoy.getFullYear())
+    if (fecha === undefined) return console.warn('No ingresaste la fecha')
+    if (!fecha instanceof Date) return console.error('El valor que ingresaste no es una fecha valida')
+
+    let diferencia = new Date().getTime() - fecha.getTime(),
+    aniosEnMs = 1000 * 60 * 60 * 24 * 365,
+    aniosHumanos = Math.floor(diferencia/aniosEnMs)
+
+    return(Math.sign(aniosHumanos)===-1)
+    ? console.info(`Faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}.`)
+    :(Math.sign(aniosHumanos)=== 1)
+    ?console.info(`Han pasado ${aniosHumanos} años, desde ${fecha.getFullYear()}`)
+    :console.info(`Estamos en el año actual ${fecha.getFullYear()}`)
 }
 // llamando a las funciones
 
