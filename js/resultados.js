@@ -281,6 +281,20 @@ const miFuncion21 = (numerosArray=undefined)=>{
     }
     console.info(`El numero= ${numerosArray} elevado al cuadrado es: ${numerosElevados}`)
 }
+
+const miFuncion22 = (arrayAltoBajo=undefined)=>{
+if (arrayAltoBajo===undefined)return console.warn(`No ingresaste los numeros`)
+if(!Array.isArray(arrayAltoBajo))return console.warn(`No ingresaste un array`)
+let numeroMasAlto = 0,
+numeroMasBajo = 0
+for(let i = 0;i<arrayAltoBajo.length;i++){
+    if(numeroMasAlto<arrayAltoBajo[i])numeroMasAlto=arrayAltoBajo[i]
+    if(numeroMasBajo>arrayAltoBajo[i])numeroMasBajo=arrayAltoBajo[i]
+}
+console.info(`El numero mas alto es: ${numeroMasAlto} y el numero mas bajo es: ${numeroMasBajo}`)
+}
+
+
 // llamando a las funciones
 
 // miFuncion01(valores.texto01)
@@ -303,4 +317,5 @@ const miFuncion21 = (numerosArray=undefined)=>{
 // miFuncion18(valores.cadenaTexto)
 // miFuncion19(valores.nombreValido)
 // miFuncion20(valores.emailValido)
-miFuncion21(valores.numerosArray)
+// miFuncion21(valores.numerosArray)
+miFuncion22(valores.arrayAltoBajo)
