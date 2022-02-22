@@ -249,6 +249,15 @@ const miFuncion17 = (fecha) =>{
     ?console.info(`Han pasado ${aniosHumanos} años, desde ${fecha.getFullYear()}`)
     :console.info(`Estamos en el año actual ${fecha.getFullYear()}`)
 }
+
+const miFuncion18 = (texto="")=>{
+    if (typeof texto != "string") console.error('No es un texto, por favor ingresa un texto');
+    if (!texto) console.warn('El texto esta vacio');
+
+    const numeroVocales = texto.match(/[aeiou]/gi).length;
+    const numeroConsonantes = texto.match(/[bcdfghjklmnñpqrstvwxyz]/gi).length
+    console.log(`El numero de vocales es: ${numeroVocales} y el numero de consonantes es: ${numeroConsonantes}`)
+}
 // llamando a las funciones
 
 // miFuncion01(valores.texto01)
@@ -267,4 +276,5 @@ const miFuncion17 = (fecha) =>{
 // miFuncion14(valores.grados, valores.medida)
 // miFuncion15(valores.numeroAConvertir,valores.base)
 // miFuncion16(valores.compra,valores.descuento)
-miFuncion17(valores.anio)
+// miFuncion17(valores.anio)
+miFuncion18(valores.cadenaTexto)

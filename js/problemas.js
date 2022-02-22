@@ -78,8 +78,20 @@ const descuento = 20
 
 let anio = new Date (1984,4,23)
 
+// 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+
+const cadenaTexto = 'hola mundo'
+
+// 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+
+
+
+// 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+
+
 // exportando los textos que eh ingresado, para resolverlos.
 
 export const valores ={
-    texto01,texto02,texto03,texto04,longitud,separador,repetidor,texto05,texto06,palabraRepetida,texto07,esPalindromo,texto08,patron,minimo,maximo,numero,numeroFactorial,numeroPrimo,numeroParImpar,grados,medida,numeroAConvertir,base,compra,descuento,anio
+    texto01,texto02,texto03,texto04,longitud,separador,repetidor,texto05,texto06,palabraRepetida,texto07,esPalindromo,texto08,patron,minimo,maximo,numero,numeroFactorial,numeroPrimo,numeroParImpar,grados,medida,numeroAConvertir,base,compra,descuento,anio,cadenaTexto
 }
