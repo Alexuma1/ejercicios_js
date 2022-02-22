@@ -149,7 +149,7 @@ const miFuncion11 = (numero = undefined) => {
     console.info(`El numero factorial de ${numero} es: ${numeroFactorial}`)
 }
 
-const miFuncion12 = (numero=undefined) => {
+const miFuncion12 = (numero = undefined) => {
     if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
     if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
     let coincidencias = false
@@ -205,18 +205,18 @@ const miFuncion15 = (numero = undefined, base = undefined) => {
     if (base === 0) return console.error(`Ingresaste un numero: ${base} igual a 0, ingresa un numero mayor`)
     if (Math.sign(base) === -1) return console.error(`Ingresaste un numero: ${base} nagativo, ingresa un numero positivo`)
 
-    if (base===2){
-        const numeroADecimal = parseInt(numero,base)
+    if (base === 2) {
+        const numeroADecimal = parseInt(numero, base)
         console.info(`${numero} en decimal es ${numeroADecimal} base 10`)
     }
-    if (base===10){
+    if (base === 10) {
         const numeroABinario = numero.toString(2)
         console.info(`${numero} en binario es ${numeroABinario} base 2`)
     }
 
 }
 
-const miFuncion16 = (numero=undefined, porcentaje=undefined)=>{
+const miFuncion16 = (numero = undefined, porcentaje = undefined) => {
     if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
     if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
     if (Math.sign(numero) === -1) return console.error(`Ingresaste un numero: ${numero} nagativo, ingresa un numero positivo`)
@@ -224,28 +224,28 @@ const miFuncion16 = (numero=undefined, porcentaje=undefined)=>{
     if (porcentaje === 0) return console.error(`Ingresaste un numero: ${porcentaje} igual a 0, ingresa un numero mayor`)
     if (Math.sign(porcentaje) === -1) return console.error(`Ingresaste un numero: ${porcentaje} nagativo, ingresa un numero positivo`)
 
-    const compraConDescuento = numero-((numero*porcentaje)/100)
+    const compraConDescuento = numero - ((numero * porcentaje) / 100)
     console.info(`Se aplico su descuento de ${porcentaje}% y el monto total a pagar es: ${compraConDescuento}`)
 }
- 
-const miFuncion17 = (fecha) =>{
+
+const miFuncion17 = (fecha) => {
     if (fecha === undefined) return console.warn('No ingresaste la fecha')
     if (!fecha instanceof Date) return console.error('El valor que ingresaste no es una fecha valida')
 
     let diferencia = new Date().getTime() - fecha.getTime(),
-    aniosEnMs = 1000 * 60 * 60 * 24 * 365,
-    aniosHumanos = Math.floor(diferencia/aniosEnMs)
+        aniosEnMs = 1000 * 60 * 60 * 24 * 365,
+        aniosHumanos = Math.floor(diferencia / aniosEnMs)
 
-    return(Math.sign(aniosHumanos)===-1)
-    ? console.info(`Faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}.`)
-    :(Math.sign(aniosHumanos)=== 1)
-    ?console.info(`Han pasado ${aniosHumanos} años, desde ${fecha.getFullYear()}`)
-    :console.info(`Estamos en el año actual ${fecha.getFullYear()}`)
+    return (Math.sign(aniosHumanos) === -1)
+        ? console.info(`Faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}.`)
+        : (Math.sign(aniosHumanos) === 1)
+            ? console.info(`Han pasado ${aniosHumanos} años, desde ${fecha.getFullYear()}`)
+            : console.info(`Estamos en el año actual ${fecha.getFullYear()}`)
 }
 
-const miFuncion18 = (texto="")=>{
-    if (typeof texto != "string")return console.error('No es un texto, por favor ingresa un texto');
-    if (!texto)return console.warn('El texto esta vacio');
+const miFuncion18 = (texto = "") => {
+    if (typeof texto != "string") return console.error('No es un texto, por favor ingresa un texto');
+    if (!texto) return console.warn('El texto esta vacio');
 
     texto = texto.toLocaleLowerCase()
     const numeroVocales = texto.match(/[aeiouáéíóúü]/gi).length
@@ -253,47 +253,56 @@ const miFuncion18 = (texto="")=>{
     console.log(`El numero de vocales es: ${numeroVocales} y el numero de consonantes es: ${numeroConsonantes}`)
 }
 
-const miFuncion19 = (nombreValido="")=>{
-    if (typeof nombreValido != "string")return console.error('No es un texto, por favor ingresa un texto');
-    if (!nombreValido)return console.warn('El texto esta vacio');
-    let expReg =/^[A-Za-zÑñÁÉÍÓÚáéíóúÜü\s]+$/g.test(nombreValido)
+const miFuncion19 = (nombreValido = "") => {
+    if (typeof nombreValido != "string") return console.error('No es un texto, por favor ingresa un texto');
+    if (!nombreValido) return console.warn('El texto esta vacio');
+    let expReg = /^[A-Za-zÑñÁÉÍÓÚáéíóúÜü\s]+$/g.test(nombreValido)
 
-    return(expReg)
-    ?console.info(`${nombreValido}, es un nombre valido`)
-    :console.warn(`${nombreValido}, No es un nombre valido`)
+    return (expReg)
+        ? console.info(`${nombreValido}, es un nombre valido`)
+        : console.warn(`${nombreValido}, No es un nombre valido`)
 }
 
-const miFuncion20 = (emailValido="")=>{
-    if (typeof emailValido != "string")return console.error('No es un texto, por favor ingresa un texto');
-    if (!emailValido)return console.warn('El texto esta vacio');
+const miFuncion20 = (emailValido = "") => {
+    if (typeof emailValido != "string") return console.error('No es un texto, por favor ingresa un texto');
+    if (!emailValido) return console.warn('El texto esta vacio');
     let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(emailValido)
-    return(expReg)
-    ?console.info(`${emailValido}, es un nombre valido`)
-    :console.warn(`${emailValido}, No es un nombre valido`)
+    return (expReg)
+        ? console.info(`${emailValido}, es un nombre valido`)
+        : console.warn(`${emailValido}, No es un nombre valido`)
 }
 
-const miFuncion21 = (numerosArray=undefined)=>{
-    if (numerosArray===undefined)return console.warn(`No ingresaste los numeros`)
-    if(!Array.isArray(numerosArray))return console.warn(`No ingresaste un array`)
-    const numerosElevados = []
-    for(let i = 0;i<numerosArray.length;i++){
-        numerosElevados[i]= Math.pow(numerosArray[i],2)
+const miFuncion21 = (numerosArray = undefined) => {
+    if (numerosArray === undefined) return console.warn(`No ingresaste los numeros`)
+    if (!(numerosArray instanceof Array)) return console.warn(`No ingresaste un array`)
+    if (numerosArray.length===0)return console.error('El arreglo esta vacio')
+    for(let num of numerosArray){
+        if(typeof num !== 'number')('El dato no es del tipo numero')
     }
-    console.info(`El numero= ${numerosArray} elevado al cuadrado es: ${numerosElevados}`)
+    const numerosElevados = numerosArray.map(el => el * el)
+    return console.info(`El numero= ${numerosArray} elevado al cuadrado es: ${numerosElevados}`)
 }
 
-const miFuncion22 = (arrayAltoBajo=undefined)=>{
-if (arrayAltoBajo===undefined)return console.warn(`No ingresaste los numeros`)
-if(!Array.isArray(arrayAltoBajo))return console.warn(`No ingresaste un array`)
-let numeroMasAlto = 0,
-numeroMasBajo = 0
-for(let i = 0;i<arrayAltoBajo.length;i++){
-    if(numeroMasAlto<arrayAltoBajo[i])numeroMasAlto=arrayAltoBajo[i]
-    if(numeroMasBajo>arrayAltoBajo[i])numeroMasBajo=arrayAltoBajo[i]
-}
-console.info(`El numero mas alto es: ${numeroMasAlto} y el numero mas bajo es: ${numeroMasBajo}`)
+const miFuncion22 = (arrayAltoBajo = undefined) => {
+    if (arrayAltoBajo === undefined) return console.warn(`No ingresaste los numeros`)
+    if (!(arrayAltoBajo instanceof Array)) return console.warn(`No ingresaste un array`)
+    if (arrayAltoBajo.length===0)return console.error('El arreglo esta vacio')
+    for(let num of arrayAltoBajo){
+        if(typeof num !== 'number')('El dato no es del tipo numero')
+    }
+    let numeroMasAlto = Math.max(...arrayAltoBajo)
+    let numeroMasBajo = Math.min(...arrayAltoBajo) 
+    console.info(`El numero mas alto es: ${numeroMasAlto} y el numero mas bajo es: ${numeroMasBajo}`)
 }
 
+const miFuncion23 = (arrayParesImpares = undefined) => {
+    if (arrayParesImpares === undefined) return console.warn(`No ingresaste los numeros`)
+    if (!Array.isArray(arrayParesImpares)) return console.warn(`No ingresaste un array`)
+    const objeto = {pares:arrayParesImpares.filter(num => num % 2 === 0),
+    impares:arrayParesImpares.filter(num => num % 2 === 1)
+    }
+    console.log(objeto)
+}
 
 // llamando a las funciones
 
@@ -318,4 +327,5 @@ console.info(`El numero mas alto es: ${numeroMasAlto} y el numero mas bajo es: $
 // miFuncion19(valores.nombreValido)
 // miFuncion20(valores.emailValido)
 // miFuncion21(valores.numerosArray)
-miFuncion22(valores.arrayAltoBajo)
+// miFuncion22(valores.arrayAltoBajo)
+miFuncion23(valores.arrayParesImpares)
