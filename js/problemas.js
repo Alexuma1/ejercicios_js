@@ -76,10 +76,10 @@ const descuento = 20
 
 // 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
 
-
+let anio = new Date (1984,4,23)
 
 // exportando los textos que eh ingresado, para resolverlos.
 
 export const valores ={
-    texto01,texto02,texto03,texto04,longitud,separador,repetidor,texto05,texto06,palabraRepetida,texto07,esPalindromo,texto08,patron,minimo,maximo,numero,numeroFactorial,numeroPrimo,numeroParImpar,grados,medida,numeroAConvertir,base,compra,descuento
+    texto01,texto02,texto03,texto04,longitud,separador,repetidor,texto05,texto06,palabraRepetida,texto07,esPalindromo,texto08,patron,minimo,maximo,numero,numeroFactorial,numeroPrimo,numeroParImpar,grados,medida,numeroAConvertir,base,compra,descuento,anio
 }

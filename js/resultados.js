@@ -235,6 +235,20 @@ const miFuncion16 = (numero=undefined, porcentaje=undefined)=>{
     const compraConDescuento = numero-descuento
     console.info(`Se aplico su descuento de ${porcentaje}% y el monto total a pagar es: ${compraConDescuento}`)
 }
+
+const miFuncion17 = (fecha) =>{
+    if (fecha === 0) return console.error(`Ingresaste un numero: ${fecha} igual a 0, ingresa un numero mayor`)
+    console.log(fecha)
+    const hoy = new Date()
+    var tiempoAPasado = hoy.getFullYear() - fecha.getFullYear()
+    var m = hoy.getMonth() - fecha.getMonth()
+    
+    if (m < 0 || (m === 0 && hoy.getDate() < fecha.getDate())) {
+        tiempoAPasado--;
+    }
+    console.log(tiempoAPasado)
+    console.log(hoy.getFullYear())
+}
 // llamando a las funciones
 
 // miFuncion01(valores.texto01)
@@ -252,4 +266,5 @@ const miFuncion16 = (numero=undefined, porcentaje=undefined)=>{
 // miFuncion13(valores.numeroParImpar)
 // miFuncion14(valores.grados, valores.medida)
 // miFuncion15(valores.numeroAConvertir,valores.base)
-miFuncion16(valores.compra,valores.descuento)
+// miFuncion16(valores.compra,valores.descuento)
+miFuncion17(valores.anio)
