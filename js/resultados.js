@@ -156,7 +156,7 @@ const miFuncion11 = (numero = undefined) => {
     console.info(`El numero factorial de ${numero} es: ${numeroFactorial}`)
 }
 
-const miFuncion12 = (numero) => {
+const miFuncion12 = (numero=undefined) => {
     if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
     if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
     let coincidencias = false
@@ -222,6 +222,19 @@ const miFuncion15 = (numero = undefined, base = undefined) => {
     }
 
 }
+
+const miFuncion16 = (numero=undefined, porcentaje=undefined)=>{
+    if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
+    if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
+    if (Math.sign(numero) === -1) return console.error(`Ingresaste un numero: ${numero} nagativo, ingresa un numero positivo`)
+    if (typeof porcentaje != 'number') return console.warn(`No ingresaste un numero: ${porcentaje} , ingresa un numero`)
+    if (porcentaje === 0) return console.error(`Ingresaste un numero: ${porcentaje} igual a 0, ingresa un numero mayor`)
+    if (Math.sign(porcentaje) === -1) return console.error(`Ingresaste un numero: ${porcentaje} nagativo, ingresa un numero positivo`)
+
+    const descuento = numero*(porcentaje/100)
+    const compraConDescuento = numero-descuento
+    console.info(`Se aplico su descuento de ${porcentaje}% y el monto total a pagar es: ${compraConDescuento}`)
+}
 // llamando a las funciones
 
 // miFuncion01(valores.texto01)
@@ -238,4 +251,5 @@ const miFuncion15 = (numero = undefined, base = undefined) => {
 // miFuncion12(valores.numeroPrimo)
 // miFuncion13(valores.numeroParImpar)
 // miFuncion14(valores.grados, valores.medida)
-miFuncion15(valores.numeroAConvertir,valores.base)
+// miFuncion15(valores.numeroAConvertir,valores.base)
+miFuncion16(valores.compra,valores.descuento)
