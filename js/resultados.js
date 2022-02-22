@@ -165,43 +165,62 @@ const miFuncion12 = (numero) => {
             console.log(i)
             console.log(coincidencias)
             if (numero % i === 0) {
-                coincidencias=true
+                coincidencias = true
                 break
             }
         }
         console.log(coincidencias)
-        if (coincidencias==true) console.log(`El numero ${numero} No es un numero Primo`)
+        if (coincidencias == true) console.log(`El numero ${numero} No es un numero Primo`)
         else console.log(`El numero ${numero} es un numero Primo`)
     }
     if (Math.sign(numero) != -1) {
         for (let i = 2; i < numero; i++) {
             if (numero % i === 0) {
-                coincidencias=true
+                coincidencias = true
                 break
             }
         }
-        if (coincidencias==true) console.log(`El numero ${numero} No es un numero Primo`)
+        if (coincidencias == true) console.log(`El numero ${numero} No es un numero Primo`)
         else console.log(`El numero ${numero} es un numero Primo`)
     }
 }
 
-const miFuncion13 = (numero=undefined)=>{
+const miFuncion13 = (numero = undefined) => {
     if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
     if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
-    if (numero % 2 === 0)console.log('es par')
+    if (numero % 2 === 0) console.log('es par')
     else console.log('es impar')
 }
 
-const miFuncion14 = (numero=undefined,texto='')=>{
+const miFuncion14 = (numero = undefined, texto = '') => {
     if (typeof texto != "string") console.error('No es un texto, por favor ingresa un texto');
     if (!texto) console.warn('El texto esta vacio');
     if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
     texto = texto.toUpperCase()
-    if(texto.length !==1 || !/(C|F)/.test(texto))return console.warn('Valor de la unidad no reconocido')
-    const fahrenheit = (numero*9/5)+32
-    const celsius = (numero - 32)*5/9
-    if(texto==='C')console.log(`${numero}°C = ${fahrenheit}°F`)
+    if (texto.length !== 1 || !/(C|F)/.test(texto)) return console.warn('Valor de la unidad no reconocido')
+    const fahrenheit = (numero * 9 / 5) + 32
+    const celsius = (numero - 32) * 5 / 9
+    if (texto === 'C') console.log(`${numero}°C = ${fahrenheit}°F`)
     else console.log(`${numero}°F = ${celsius}°C`)
+}
+
+const miFuncion15 = (numero = undefined, base = undefined) => {
+    if (typeof numero != 'number') return console.warn(`No ingresaste un numero: ${numero} , ingresa un numero`)
+    if (numero === 0) return console.error(`Ingresaste un numero: ${numero} igual a 0, ingresa un numero mayor`)
+    if (Math.sign(numero) === -1) return console.error(`Ingresaste un numero: ${numero} nagativo, ingresa un numero positivo`)
+    if (typeof base != 'number') return console.warn(`No ingresaste un numero: ${base} , ingresa un numero`)
+    if (base === 0) return console.error(`Ingresaste un numero: ${base} igual a 0, ingresa un numero mayor`)
+    if (Math.sign(base) === -1) return console.error(`Ingresaste un numero: ${base} nagativo, ingresa un numero positivo`)
+
+    if (base===2){
+        const numeroADecimal = parseInt(numero,base)
+        console.info(`${numero} en decimal es ${numeroADecimal} base 10`)
+    }
+    if (base===10){
+        const numeroABinario = numero.toString(2)
+        console.info(`${numero} en binario es ${numeroABinario} base 2`)
+    }
+
 }
 // llamando a las funciones
 
@@ -218,4 +237,5 @@ const miFuncion14 = (numero=undefined,texto='')=>{
 // miFuncion11(valores.numeroFactorial)
 // miFuncion12(valores.numeroPrimo)
 // miFuncion13(valores.numeroParImpar)
-miFuncion14(valores.grados,valores.medida)
+// miFuncion14(valores.grados, valores.medida)
+miFuncion15(valores.numeroAConvertir,valores.base)
