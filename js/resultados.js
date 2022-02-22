@@ -266,8 +266,20 @@ const miFuncion19 = (nombreValido="")=>{
 const miFuncion20 = (emailValido="")=>{
     if (typeof emailValido != "string")return console.error('No es un texto, por favor ingresa un texto');
     if (!emailValido)return console.warn('El texto esta vacio');
-    let LetrasCompuestas = /^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/
-    if(!letras)return console.error('No se admiten acentos ni ñ');
+    let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(emailValido)
+    return(expReg)
+    ?console.info(`${emailValido}, es un nombre valido`)
+    :console.warn(`${emailValido}, No es un nombre valido`)
+}
+
+const miFuncion21 = (numerosArray=undefined)=>{
+    if (numerosArray===undefined)return console.warn(`No ingresaste los numeros`)
+    if(!Array.isArray(numerosArray))return console.warn(`No ingresaste un array`)
+    const numerosElevados = []
+    for(let i = 0;i<numerosArray.length;i++){
+        numerosElevados[i]= Math.pow(numerosArray[i],2)
+    }
+    console.info(`El numero= ${numerosArray} elevado al cuadrado es: ${numerosElevados}`)
 }
 // llamando a las funciones
 
@@ -291,3 +303,4 @@ const miFuncion20 = (emailValido="")=>{
 // miFuncion18(valores.cadenaTexto)
 // miFuncion19(valores.nombreValido)
 // miFuncion20(valores.emailValido)
+miFuncion21(valores.numerosArray)
