@@ -84,14 +84,14 @@ const cadenaTexto = 'hola mundo'
 
 // 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
 
-
+const nombreValido = 'Jonathan MirCha'
 
 // 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
 
-
+const emailValido = 'alex@gmail.com'
 
 // exportando los textos que eh ingresado, para resolverlos.
 
 export const valores ={
-    texto01,texto02,texto03,texto04,longitud,separador,repetidor,texto05,texto06,palabraRepetida,texto07,esPalindromo,texto08,patron,minimo,maximo,numero,numeroFactorial,numeroPrimo,numeroParImpar,grados,medida,numeroAConvertir,base,compra,descuento,anio,cadenaTexto
+    texto01,texto02,texto03,texto04,longitud,separador,repetidor,texto05,texto06,palabraRepetida,texto07,esPalindromo,texto08,patron,minimo,maximo,numero,numeroFactorial,numeroPrimo,numeroParImpar,grados,medida,numeroAConvertir,base,compra,descuento,anio,cadenaTexto,nombreValido,emailValido
 }

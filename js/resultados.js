@@ -7,8 +7,8 @@ import { valores } from "./problemas.js";
 
 // los datos ingresados son del tipo texto:
 // const esTexto = (texto = "") => {
-//     if (typeof texto != "string") console.error('No es un texto, por favor ingresa un texto');
-//     if (!texto) console.warn('El texto esta vacio');
+//     if (typeof texto != "string")return console.error('No es un texto, por favor ingresa un texto');
+//     if (!texto)return console.warn('El texto esta vacio');
 // }
 
 // Comprobaciones numeros:
@@ -26,13 +26,6 @@ import { valores } from "./problemas.js";
 //     if (valor2 === 0) return console.error(`Ingresaste un numero: ${valor2} igual a 0, ingresa un numero mayor`)
 //     if (Math.sign(valor2)===-1)return console.error(`Ingresaste un numero: ${valor2} nagativo, ingresa un numero positivo`)
 // }
-
-// los datos ingresados son los del separador indicado:
-// const esSeparador = (separador = "") =>{
-//     if (typeof separador != "string") console.warn('No es el separador que se esperaba, el esperado es tipo " "')
-//     if (separador != ' ') console.warn('Ingresa el separador valido para esta operacion, " "')
-// }
-
 
 // realizando las funciones pedidas en los problemas
 
@@ -251,12 +244,30 @@ const miFuncion17 = (fecha) =>{
 }
 
 const miFuncion18 = (texto="")=>{
-    if (typeof texto != "string") console.error('No es un texto, por favor ingresa un texto');
-    if (!texto) console.warn('El texto esta vacio');
+    if (typeof texto != "string")return console.error('No es un texto, por favor ingresa un texto');
+    if (!texto)return console.warn('El texto esta vacio');
 
-    const numeroVocales = texto.match(/[aeiou]/gi).length;
+    texto = texto.toLocaleLowerCase()
+    const numeroVocales = texto.match(/[aeiouáéíóúü]/gi).length
     const numeroConsonantes = texto.match(/[bcdfghjklmnñpqrstvwxyz]/gi).length
     console.log(`El numero de vocales es: ${numeroVocales} y el numero de consonantes es: ${numeroConsonantes}`)
+}
+
+const miFuncion19 = (nombreValido="")=>{
+    if (typeof nombreValido != "string")return console.error('No es un texto, por favor ingresa un texto');
+    if (!nombreValido)return console.warn('El texto esta vacio');
+    let expReg =/^[A-Za-zÑñÁÉÍÓÚáéíóúÜü\s]+$/g.test(nombreValido)
+
+    return(expReg)
+    ?console.info(`${nombreValido}, es un nombre valido`)
+    :console.warn(`${nombreValido}, No es un nombre valido`)
+}
+
+const miFuncion20 = (emailValido="")=>{
+    if (typeof emailValido != "string")return console.error('No es un texto, por favor ingresa un texto');
+    if (!emailValido)return console.warn('El texto esta vacio');
+    let LetrasCompuestas = /^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/
+    if(!letras)return console.error('No se admiten acentos ni ñ');
 }
 // llamando a las funciones
 
@@ -277,4 +288,6 @@ const miFuncion18 = (texto="")=>{
 // miFuncion15(valores.numeroAConvertir,valores.base)
 // miFuncion16(valores.compra,valores.descuento)
 // miFuncion17(valores.anio)
-miFuncion18(valores.cadenaTexto)
+// miFuncion18(valores.cadenaTexto)
+// miFuncion19(valores.nombreValido)
+// miFuncion20(valores.emailValido)
