@@ -316,9 +316,16 @@ const miFuncion24 = (numAscDes=undefined)=>{
         ascendente:numAscDes.map(el=>el).sort((a,b)=>a-b),
         descendente:numAscDes.map(el=>el).sort((a,b)=>b-a)
     }
-    console.info(objeto)
+    return console.info(objeto)
 }
 
+const miFuncion25 = (duplicados=undefined)=>{
+    if(duplicados===undefined)return console.warn('No ingresaste ningun numero')
+    if(duplicados.length===0)return console.warn('El arreglo esta vacio')
+    if(!(duplicados instanceof Array))return console.error('Los datos ingresados no son del tipo array')
+    let deleteDuplicados = [...new Set(duplicados.map(el=>el))]
+    return console.log(deleteDuplicados)
+}
 // llamando a las funciones
 
 // miFuncion01(valores.texto01)
@@ -344,4 +351,5 @@ const miFuncion24 = (numAscDes=undefined)=>{
 // miFuncion21(valores.numerosArray)
 // miFuncion22(valores.arrayAltoBajo)
 // miFuncion23(valores.arrayParesImpares)
-miFuncion24(valores.numAscDes)
+// miFuncion24(valores.numAscDes)
+miFuncion25(valores.duplicados)
