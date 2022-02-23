@@ -326,6 +326,22 @@ const miFuncion25 = (duplicados=undefined)=>{
     let deleteDuplicados = [...new Set(duplicados.map(el=>el))]
     return console.log(deleteDuplicados)
 }
+
+const miFuncion26 = (promedio=undefined)=>{
+    if(promedio===undefined)return console.warn('No ingresaste ningun numero')
+    if(promedio.length===0)return console.warn('El arreglo esta vacio')
+    if(!(promedio instanceof Array))return console.error('Los datos ingresados no son del tipo array')
+    for(let num of promedio){
+        if(typeof num !== 'number')return console.error('El array no es solo de numeros, ingresa solo numeros')
+    }
+    let total= 0
+    for(let i = 0;i<promedio.length;i++){
+        total = promedio[i] + total
+    }
+    // console.info(promedio.length)
+    let promedioTotal = total / promedio.length
+    console.info(`El promedio de ${promedio} es: ${promedioTotal}`)
+}
 // llamando a las funciones
 
 // miFuncion01(valores.texto01)
@@ -352,4 +368,6 @@ const miFuncion25 = (duplicados=undefined)=>{
 // miFuncion22(valores.arrayAltoBajo)
 // miFuncion23(valores.arrayParesImpares)
 // miFuncion24(valores.numAscDes)
-miFuncion25(valores.duplicados)
+// miFuncion25(valores.duplicados)
+miFuncion26(valores.promedio)
+
