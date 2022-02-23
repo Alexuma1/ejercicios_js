@@ -344,6 +344,7 @@ const miFuncion26 = (promedio = undefined) => {
         } else return total
     })
 }
+
 // llamando a las funciones
 
 // miFuncion01(valores.texto01)
@@ -371,5 +372,5 @@ const miFuncion26 = (promedio = undefined) => {
 // miFuncion23(valores.arrayParesImpares)
 // miFuncion24(valores.numAscDes)
 // miFuncion25(valores.duplicados)
-miFuncion26(valores.promedio)
+// miFuncion26(valores.promedio)
 
