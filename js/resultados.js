@@ -304,6 +304,21 @@ const miFuncion23 = (arrayParesImpares = undefined) => {
     console.log(objeto)
 }
 
+const miFuncion24 = (numAscDes=undefined)=>{
+    if(numAscDes===undefined)return console.warn('No ingresaste ningun numero')
+    if(numAscDes.length===0)return console.warn('El arreglo esta vacio')
+    if(!(numAscDes instanceof Array))return console.error('Los datos ingresados no son del tipo array')
+    for(let num of numAscDes){
+        if(typeof num !== 'number')return console.error('El array no es solo de numeros, ingresa solo numeros')
+    }
+    const objeto = {
+        numAscDes,
+        ascendente:numAscDes.map(el=>el).sort((a,b)=>a-b),
+        descendente:numAscDes.map(el=>el).sort((a,b)=>b-a)
+    }
+    console.info(objeto)
+}
+
 // llamando a las funciones
 
 // miFuncion01(valores.texto01)
@@ -328,4 +343,5 @@ const miFuncion23 = (arrayParesImpares = undefined) => {
 // miFuncion20(valores.emailValido)
 // miFuncion21(valores.numerosArray)
 // miFuncion22(valores.arrayAltoBajo)
-miFuncion23(valores.arrayParesImpares)
+// miFuncion23(valores.arrayParesImpares)
+miFuncion24(valores.numAscDes)
