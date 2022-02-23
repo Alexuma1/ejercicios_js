@@ -275,9 +275,9 @@ const miFuncion20 = (emailValido = "") => {
 const miFuncion21 = (numerosArray = undefined) => {
     if (numerosArray === undefined) return console.warn(`No ingresaste los numeros`)
     if (!(numerosArray instanceof Array)) return console.warn(`No ingresaste un array`)
-    if (numerosArray.length===0)return console.error('El arreglo esta vacio')
-    for(let num of numerosArray){
-        if(typeof num !== 'number')('El dato no es del tipo numero')
+    if (numerosArray.length === 0) return console.error('El arreglo esta vacio')
+    for (let num of numerosArray) {
+        if (typeof num !== 'number') ('El dato no es del tipo numero')
     }
     const numerosElevados = numerosArray.map(el => el * el)
     return console.info(`El numero= ${numerosArray} elevado al cuadrado es: ${numerosElevados}`)
@@ -286,61 +286,63 @@ const miFuncion21 = (numerosArray = undefined) => {
 const miFuncion22 = (arrayAltoBajo = undefined) => {
     if (arrayAltoBajo === undefined) return console.warn(`No ingresaste los numeros`)
     if (!(arrayAltoBajo instanceof Array)) return console.warn(`No ingresaste un array`)
-    if (arrayAltoBajo.length===0)return console.error('El arreglo esta vacio')
-    for(let num of arrayAltoBajo){
-        if(typeof num !== 'number')('El dato no es del tipo numero')
+    if (arrayAltoBajo.length === 0) return console.error('El arreglo esta vacio')
+    for (let num of arrayAltoBajo) {
+        if (typeof num !== 'number') ('El dato no es del tipo numero')
     }
     let numeroMasAlto = Math.max(...arrayAltoBajo)
-    let numeroMasBajo = Math.min(...arrayAltoBajo) 
+    let numeroMasBajo = Math.min(...arrayAltoBajo)
     console.info(`El numero mas alto es: ${numeroMasAlto} y el numero mas bajo es: ${numeroMasBajo}`)
 }
 
 const miFuncion23 = (arrayParesImpares = undefined) => {
     if (arrayParesImpares === undefined) return console.warn(`No ingresaste los numeros`)
     if (!Array.isArray(arrayParesImpares)) return console.warn(`No ingresaste un array`)
-    const objeto = {pares:arrayParesImpares.filter(num => num % 2 === 0),
-    impares:arrayParesImpares.filter(num => num % 2 === 1)
+    const objeto = {
+        pares: arrayParesImpares.filter(num => num % 2 === 0),
+        impares: arrayParesImpares.filter(num => num % 2 === 1)
     }
     console.log(objeto)
 }
 
-const miFuncion24 = (numAscDes=undefined)=>{
-    if(numAscDes===undefined)return console.warn('No ingresaste ningun numero')
-    if(numAscDes.length===0)return console.warn('El arreglo esta vacio')
-    if(!(numAscDes instanceof Array))return console.error('Los datos ingresados no son del tipo array')
-    for(let num of numAscDes){
-        if(typeof num !== 'number')return console.error('El array no es solo de numeros, ingresa solo numeros')
+const miFuncion24 = (numAscDes = undefined) => {
+    if (numAscDes === undefined) return console.warn('No ingresaste ningun numero')
+    if (numAscDes.length === 0) return console.warn('El arreglo esta vacio')
+    if (!(numAscDes instanceof Array)) return console.error('Los datos ingresados no son del tipo array')
+    for (let num of numAscDes) {
+        if (typeof num !== 'number') return console.error('El array no es solo de numeros, ingresa solo numeros')
     }
     const objeto = {
         numAscDes,
-        ascendente:numAscDes.map(el=>el).sort((a,b)=>a-b),
-        descendente:numAscDes.map(el=>el).sort((a,b)=>b-a)
+        ascendente: numAscDes.map(el => el).sort((a, b) => a - b),
+        descendente: numAscDes.map(el => el).sort((a, b) => b - a)
     }
     return console.info(objeto)
 }
 
-const miFuncion25 = (duplicados=undefined)=>{
-    if(duplicados===undefined)return console.warn('No ingresaste ningun numero')
-    if(duplicados.length===0)return console.warn('El arreglo esta vacio')
-    if(!(duplicados instanceof Array))return console.error('Los datos ingresados no son del tipo array')
-    let deleteDuplicados = [...new Set(duplicados.map(el=>el))]
+const miFuncion25 = (duplicados = undefined) => {
+    if (duplicados === undefined) return console.warn('No ingresaste ningun numero')
+    if (duplicados.length === 0) return console.warn('El arreglo esta vacio')
+    if (!(duplicados instanceof Array)) return console.error('Los datos ingresados no son del tipo array')
+    let deleteDuplicados = [...new Set(duplicados.map(el => el))]
     return console.log(deleteDuplicados)
 }
 
-const miFuncion26 = (promedio=undefined)=>{
-    if(promedio===undefined)return console.warn('No ingresaste ningun numero')
-    if(promedio.length===0)return console.warn('El arreglo esta vacio')
-    if(!(promedio instanceof Array))return console.error('Los datos ingresados no son del tipo array')
-    for(let num of promedio){
-        if(typeof num !== 'number')return console.error('El array no es solo de numeros, ingresa solo numeros')
+const miFuncion26 = (promedio = undefined) => {
+    if (promedio === undefined) return console.warn('No ingresaste ningun numero')
+    if (promedio.length === 0) return console.warn('El arreglo esta vacio')
+    if (!(promedio instanceof Array)) return console.error('Los datos ingresados no son del tipo array')
+    for (let num of promedio) {
+        if (typeof num !== 'number') return console.error('El array no es solo de numeros, ingresa solo numeros')
     }
-    let total= 0
-    for(let i = 0;i<promedio.length;i++){
-        total = promedio[i] + total
-    }
-    // console.info(promedio.length)
-    let promedioTotal = total / promedio.length
-    console.info(`El promedio de ${promedio} es: ${promedioTotal}`)
+    let elPromedio = 0
+    promedio.reduce((total, num, index, promedio) => {
+        total += num
+        if (index === promedio.length - 1) {
+            elPromedio = total / promedio.length
+            return console.log(`El promedio de ${promedio.join(" + ")} es lgual a ${elPromedio}`)
+        } else return total
+    })
 }
 // llamando a las funciones
 
