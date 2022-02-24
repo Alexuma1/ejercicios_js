@@ -94,8 +94,8 @@ class Pelicula {
 
     validarGeneros(generos) {
         if (this.validarArray('Generos', generos)) {
-            for(let genero of generos){
-                if(!Pelicula.listaGeneros.includes(genero)){
+            for (let genero of generos) {
+                if (!Pelicula.listaGeneros.includes(genero)) {
                     console.error(`Generos(s) incorrectos"${generos.join(", ")}"`)
                     Pelicula.generosAceptados()
                 }
@@ -105,13 +105,12 @@ class Pelicula {
 
     validarCalificacion(calificacion) {
         if (this.validarNumero('Calificacion', calificacion)) {
-            if (!(/^([1-9]{1})(\.[0-9]{1})?$/.test(calificacion))) {
-                return console.error(`Año de Estreno "${calificacion}" no es válido, debe tener una calificacion`)
-            }
+            return (calificacion < 1 || calificacion > 10)
+                ? console.error(`La calificacion tiene que etar entre un rango entre 0 y 10`)
+                : this.calificacion = calificacion.toFixed(1)
         }
     }
 }
-
 // Pelicula.generosAceptados()
 const peli = new Pelicula({
     id: 'tt1928374',
@@ -120,5 +119,5 @@ const peli = new Pelicula({
     estreno: 5432,
     origen: ['asd asd asd'],
     generos: ['Comedy', 'Adventure'],
-    calificacion:4
+    calificacion: 5.2
 })
