@@ -44,28 +44,58 @@
         //     uno()
         //     console.log('Fin')
         // })()
-            // Codigo Asincrono No Bloqueante
+        // Codigo Asincrono No Bloqueante
 
-            // (() => {
-            //     console.log('Codigo Asincrono')
-            //     console.log('inicio')
+        // (() => {
+        //     console.log('Codigo Asincrono')
+        //     console.log('inicio')
 
-            //     function dos() {
-            //         setTimeout(function () {
-            //             console.log('dos')
-            //         }, 1000)
-            //     }
-            //     function uno() {
-            //         setTimeout(function () {
-            //             console.log('uno')
-            //         }, 0)
-            //         dos()
-            //         console.log('tres')
-            //     }
-            //     uno()
-            //     console.log('Fin')
-            // })()
+        //     function dos() {
+        //         setTimeout(function () {
+        //             console.log('dos')
+        //         }, 1000)
+        //     }
+        //     function uno() {
+        //         setTimeout(function () {
+        //             console.log('uno')
+        //         }, 0)
+        //         dos()
+        //         console.log('tres')
+        //     }
+        //     uno()
+        //     console.log('Fin')
+        // })()
 
+
+        function cuadradoCallback(value, callback) {
+            setTimeout(() => {
+                callback(value, value * value)
+            }, 0 | Math.random() * 1000)
+        }
+        cuadradoCallback(0, (value, result) => {
+            console.log('Inicia Callback')
+            console.log(`Callback: ${value} es: ${result}`)
+            cuadradoCallback(1, (value, result) => {
+                console.log(`Callback: ${value} es: ${result}`)
+                cuadradoCallback(2, (value, result) => {
+                    console.log(`Callback: ${value} es: ${result}`)
+                    cuadradoCallback(3, (value, result) => {
+                        console.log(`Callback: ${value} es: ${result}`)
+                        cuadradoCallback(4, (value, result) => {
+                            console.log(`Callback: ${value} es: ${result}`)
+                            cuadradoCallback(5, (value, result) => {
+                                console.log(`Callback: ${value} es: ${result}`)
+                                cuadradoCallback(6, (value, result) => {
+                                    console.log(`Callback: ${value} es: ${result}`)
+                                    console.log('Callback Hell!!!!! jaja')
+                                    console.log('http://callbackhell.com/')
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        })
     </script>
 </body>
 
