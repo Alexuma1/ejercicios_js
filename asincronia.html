@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Asincronia en Js</h1>
     <script>
-        console.log('setTimeout')
-        setTimeout(() => {
-            console.log('Ejecutando un setTimeout, esto se ejecuta una sola vez')
-        }, 3000); /*Expresado en minisegundos*/
+        /*Antes de explicar como funciona el modelo de JS es importante entender algunos conceptos:
+        
+        Procesamiento Single Thread y Multi Thread:
 
-        console.log('setInterval')
-        setInterval(() => {
-            console.log('Ejecutando un setInterval, esto se ejecuta indefinidamete cada cierto intervalo de tiempo')
-        }, 3000); /*Expresado en minisegundos*/
-        setInterval(()=>{
-            console.log(new Date().toLocaleTimeString())
-        },3000)
+        El procesamiento Single Thread: es el procesamiento de Js que significa que se bloquea el hilo principal, no se pueden realizar operaciones largas.
+        Mirar imagen eventLoop
+        El procesamiento Multi Thread: es el procesamiento de algunos otros lenguajes que significa que cada proceso internamente abrira varios hilos (Multi thread)
+        Ej: una peticion de un una api externa podria llegar a ser un procesamiento largo y la pagina mientras pide el recurso quedaria trabada asi entra la async*/
 
-        // // para hacer un break de setTimeout requerimos que este en una variable y lo hacemos asi:
+        // Operaciones de CPU y Operaciones de I / O (entrada y salida)
+        // Operaciones de Concurrentes y Paralelos
+        // Operaciones Bloqueantes y No Bloqueantes
+        // Operaciones Sincrona y Asincrona
 
+        // Javascript usa un modelo asyncrono y no bloqueante, con un loop de eventos implementados en un solo hilo(single thread) para operaciones de entrada y salida (input/output)
+        // En JS vamos a tener 2 tipos de codigo:
 
-        const temporalizadorTO = setTimeout(()=>{
-            console.log(`Este es el setTimeout ${temporalizadorTO} que vamos a quitar con clear, que esta alojado en una variable`)
-        },1000)
-        clearTimeout(temporalizadorTO)
-        console.log('despues de ejecutar el setTimeout')
-        const temporalizadorTI = setInterval(()=>{
-            console.log(`Este es el setInterval ${temporalizadorTI} que vamos a quitar con clear, que esta alojado en una variable`)
-        },1000)
-        clearInterval(temporalizadorTI)
-        console.log('despues de ejecutar el setInterval')
+        // Codigo Sincrono Bloqueante
+
+        // (() => {
+        //     console.log('Codigo Sincrono')
+        //     console.log('inicio')
+
+        //     function dos() {
+        //         console.log('dos')
+        //     }
+        //     function uno() {
+        //         console.log('uno')
+        //         dos()
+        //         console.log('tres')
+        //     }
+        //     uno()
+        //     console.log('Fin')
+        // })()
+            // Codigo Asincrono No Bloqueante
+
+            // (() => {
+            //     console.log('Codigo Asincrono')
+            //     console.log('inicio')
+
+            //     function dos() {
+            //         setTimeout(function () {
+            //             console.log('dos')
+            //         }, 1000)
+            //     }
+            //     function uno() {
+            //         setTimeout(function () {
+            //             console.log('uno')
+            //         }, 0)
+            //         dos()
+            //         console.log('tres')
+            //     }
+            //     uno()
+            //     console.log('Fin')
+            // })()
+
     </script>
 </body>
+
 </html>

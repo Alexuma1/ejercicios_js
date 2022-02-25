@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Asincronia en Js</h1>
+    <script>
+        console.log('setTimeout')
+        setTimeout(() => {
+            console.log('Ejecutando un setTimeout, esto se ejecuta una sola vez')
+        }, 3000); /*Expresado en minisegundos*/
+
+        console.log('setInterval')
+        setInterval(() => {
+            console.log('Ejecutando un setInterval, esto se ejecuta indefinidamete cada cierto intervalo de tiempo')
+        }, 3000); /*Expresado en minisegundos*/
+        setInterval(()=>{
+            console.log(new Date().toLocaleTimeString())
+        },3000)
+
+        // // para hacer un break de setTimeout requerimos que este en una variable y lo hacemos asi:
+
+
+        const temporalizadorTO = setTimeout(()=>{
+            console.log(`Este es el setTimeout ${temporalizadorTO} que vamos a quitar con clear, que esta alojado en una variable`)
+        },1000)
+        clearTimeout(temporalizadorTO)
+        console.log('despues de ejecutar el setTimeout')
+        const temporalizadorTI = setInterval(()=>{
+            console.log(`Este es el setInterval ${temporalizadorTI} que vamos a quitar con clear, que esta alojado en una variable`)
+        },1000)
+        clearInterval(temporalizadorTI)
+        console.log('despues de ejecutar el setInterval')
+    </script>
+</body>
+</html>
