@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Nuevos tipos de datos</h1>
+  <script>
+    let id1 = 'hola'
+    let id2 = 'hola'
+    console.log(id1 === id2)
+
+    //Con symbol esto nos daria falso, porque crea una referencia unica
+
+    let id3 = Symbol()
+    let id4 = Symbol()
+    console.log(id3 === id4)
+
+    //Symbol es un tipo de dato primitivo privado unico
+
+    console.log(typeof id3, typeof id4)
+
+    const NOMBRE = Symbol('nombre') /*('nombre') es una referencia para que sepamos como se llama el symbol()*/
+    const SALUDAR = Symbol('saludar')
+
+    const persona = {
+      [NOMBRE]: 'Jonh'
+    }
+    console.log(persona)
+    //Podemos seguir usando el nombre : NOMBRE porque symbol es unico, y se representa con [] y sin ellos no es el mismo NOMBRE !== [NOMBRE] 
+    persona.NOMBRE = 'Alexuma'
+
+    console.log(persona)/* llamamos a todas las propiedades dentro del objeto*/
+    console.log(persona.NOMBRE) /* llamamos normalmente una propiedad dentro de un objeto*/
+    console.log(persona[NOMBRE])/* como lo llamamos si es un symbol*/
+
+    persona[SALUDAR] = () => {
+      console.log('Hola')
+    }
+
+    console.log(persona)
+    persona[SALUDAR]()
+
+    //si utilizamos un for of o un for in no apareceria symbol como tal, porque no es una propiedad en si, se comportan como propiedades privadas(invisibles)
+
+    for (let per in persona) {
+      console.log(per)  /*hace referencia al nombre de la propiedad*/
+      console.log(persona[per]) /* Hace refencia al contenido de la propiedad*/
+    }
+
+    // para listar los symbol privados de un objeto se utiliza: que te los devuelve como un array
+
+    const listadoDeSymbol = Object.getOwnPropertySymbols(persona)
+    console.log(listadoDeSymbol)
+
+  </script>
+</body>
+
+</html>
