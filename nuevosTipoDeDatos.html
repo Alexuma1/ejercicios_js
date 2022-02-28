@@ -11,53 +11,93 @@
 <body>
   <h1>Nuevos tipos de datos</h1>
   <script>
-    let id1 = 'hola'
-    let id2 = 'hola'
-    console.log(id1 === id2)
+    // let id1 = 'hola'
+    // let id2 = 'hola'
+    // console.log(id1 === id2)
 
-    //Con symbol esto nos daria falso, porque crea una referencia unica
+    // //Con symbol esto nos daria falso, porque crea una referencia unica
 
-    let id3 = Symbol()
-    let id4 = Symbol()
-    console.log(id3 === id4)
+    // let id3 = Symbol()
+    // let id4 = Symbol()
+    // console.log(id3 === id4)
 
-    //Symbol es un tipo de dato primitivo privado unico
+    // //Symbol es un tipo de dato primitivo privado unico
 
-    console.log(typeof id3, typeof id4)
+    // console.log(typeof id3, typeof id4)
 
-    const NOMBRE = Symbol('nombre') /*('nombre') es una referencia para que sepamos como se llama el symbol()*/
-    const SALUDAR = Symbol('saludar')
+    // const NOMBRE = Symbol('nombre') /*('nombre') es una referencia para que sepamos como se llama el symbol()*/
+    // const SALUDAR = Symbol('saludar')
 
-    const persona = {
-      [NOMBRE]: 'Jonh'
+    // const persona = {
+    //   [NOMBRE]: 'Jonh'
+    // }
+    // console.log(persona)
+    // //Podemos seguir usando el nombre : NOMBRE porque symbol es unico, y se representa con [] y sin ellos no es el mismo NOMBRE !== [NOMBRE]
+    // persona.NOMBRE = 'Alexuma'
+
+    // console.log(persona)/* llamamos a todas las propiedades dentro del objeto*/
+    // console.log(persona.NOMBRE) /* llamamos normalmente una propiedad dentro de un objeto*/
+    // console.log(persona[NOMBRE])/* como lo llamamos si es un symbol*/
+
+    // persona[SALUDAR] = () => {
+    //   console.log('Hola')
+    // }
+
+    // console.log(persona)
+    // persona[SALUDAR]()
+
+    // //si utilizamos un for of o un for in no apareceria symbol como tal, porque no es una propiedad en si, se comportan como propiedades privadas(invisibles)
+
+    // for (let per in persona) {
+    //   console.log(per)  /*hace referencia al nombre de la propiedad*/
+    //   console.log(persona[per]) /* Hace refencia al contenido de la propiedad*/
+    // }
+
+    // // para listar los symbol privados de un objeto se utiliza: que te los devuelve como un array
+
+    // const listadoDeSymbol = Object.getOwnPropertySymbols(persona)
+    // console.log(listadoDeSymbol)
+
+
+    /* Set es la nueva array de em6 no puede contener valores duplicados*/
+    const set = new Set([1, 2, 3, 4, 5, 5, {}, {}, true, false, true, []])
+
+    // para medir el contenido no usamos .lenght usamos .size
+    console.log(set)
+    console.log(set.size)
+
+    //para agregar nuevos elementos dentro del array
+    const set2 = new Set()
+    set2.add(1)
+    set2.add(2)
+    set2.add(3)
+    set2.add(3)
+    set2.add('hola')
+    set2.add('hola')
+    set2.add({})
+
+    console.log(set2)
+    console.log(set2.size)
+
+    //para recorrer el set
+    for (el of set) {
+      console.log(el)
     }
-    console.log(persona)
-    //Podemos seguir usando el nombre : NOMBRE porque symbol es unico, y se representa con [] y sin ellos no es el mismo NOMBRE !== [NOMBRE] 
-    persona.NOMBRE = 'Alexuma'
 
-    console.log(persona)/* llamamos a todas las propiedades dentro del objeto*/
-    console.log(persona.NOMBRE) /* llamamos normalmente una propiedad dentro de un objeto*/
-    console.log(persona[NOMBRE])/* como lo llamamos si es un symbol*/
+    //para iterar con la posicion de un elemento no funciona el set[0], utilizamos la propiedad Array.from
+    let arr = Array.from(set)
+    console.log(arr[0])
 
-    persona[SALUDAR] = () => {
-      console.log('Hola')
-    }
+    //para borrar un elemento del Set
+    set2.delete('hola')
+    console.log(set2)
 
-    console.log(persona)
-    persona[SALUDAR]()
+    //para saber si tenemos un elemento dentro del Set nos devolvera true si existe sino false
+    console.log(set.has(1))
 
-    //si utilizamos un for of o un for in no apareceria symbol como tal, porque no es una propiedad en si, se comportan como propiedades privadas(invisibles)
-
-    for (let per in persona) {
-      console.log(per)  /*hace referencia al nombre de la propiedad*/
-      console.log(persona[per]) /* Hace refencia al contenido de la propiedad*/
-    }
-
-    // para listar los symbol privados de un objeto se utiliza: que te los devuelve como un array
-
-    const listadoDeSymbol = Object.getOwnPropertySymbols(persona)
-    console.log(listadoDeSymbol)
-
+    //para limpiar un Set
+    set2.clear()
+    console.log(set2)
   </script>
 </body>
 
