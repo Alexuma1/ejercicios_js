@@ -125,44 +125,70 @@
     //function generator, es una funcion que se utiliza para trabajar de forma mas amigable con los iteradores
     //vuelve iterable una funcion, te permite manejar asincronias
 
-    function* iterable() {
-      yield 'hola'
-      console.log('Paso el yield 1')
-      yield 'hola todos'
-      console.log('Paso el yield 2')
-      yield 'hola todos y todas '
-      console.log('Paso el yield 3')
-    }
-    let funcionIterable = iterable()
-    // console.log(funcionIterable.next())
+    // function* iterable() {
+    //   yield 'hola'
+    //   console.log('Paso el yield 1')
+    //   yield 'hola todos'
+    //   console.log('Paso el yield 2')
+    //   yield 'hola todos y todas '
+    //   console.log('Paso el yield 3')
+    // }
+    // let funcionIterable = iterable()
+    // // console.log(funcionIterable.next())
 
-    for (let y of funcionIterable) {
-      console.log(y)
-    }
+    // for (let y of funcionIterable) {
+    //   console.log(y)
+    // }
 
-    const arr = [...iterable()]
-    console.log(arr)
+    // const arr = [...iterable()]
+    // console.log(arr)
 
     //creamos la funcion elevacion al cuadrado con generator, hay que tener mucho cuidado porque es una ejecucion asincronica no bloqueante
-    function cuadrado(valor) {
-      setTimeout(() => {
-        return console.log({ valor, resultado: valor * valor })
-      }, Math.random() * 1000);
+    // function cuadrado(valor) {
+    //   setTimeout(() => {
+    //     return console.log({ valor, resultado: valor * valor })
+    //   }, Math.random() * 1000);
+    // }
+
+    // function* generador() {
+    //   console.log('Inicia generador')
+    //   yield cuadrado(0)
+    //   yield cuadrado(2)
+    //   yield cuadrado(3)
+    //   yield cuadrado(4)
+    //   yield cuadrado(5)
+    //   console.log('Finaliza generador')
+    // }
+    // let gen = generador()
+    // for (let y of gen) {
+    //   console.log(y)
+    // }
+
+
+
+    // proxy = es un nuevo mecanismo, que crea un objeto basado en un objeto inicial. El proxy genera una copia y lo mantiene vinculado a el objeto inicial
+    // y con el manejador (handler) realizamos validaciones
+
+    const personas = {
+      nombre: '', apellido: '', edad: undefined
+    }
+    const manejador = {
+      set(obj, prop, valor) {
+        if (Object.keys(obj).indexOf(prop) === -1) {
+          return console.error(`La propiedad "${prop}" no existe dentro de personas`)
+        }
+        obj[prop] = valor
+      }
     }
 
-    function* generador() {
-      console.log('Inicia generador')
-      yield cuadrado(0)
-      yield cuadrado(2)
-      yield cuadrado(3)
-      yield cuadrado(4)
-      yield cuadrado(5)
-      console.log('Finaliza generador')
-    }
-    let gen = generador()
-    for (let y of gen) {
-      console.log(y)
-    }
+    const jonh = new Proxy(personas, manejador)
+    jonh.nombre = 'Jonh'
+    jonh.apellido = 'Mircha'
+    jonh.edad = 35
+    jonh.twitter = '@jonhMircha'
+    console.log(jonh)
+    console.log(personas)
+
   </script>
 </body>
 
