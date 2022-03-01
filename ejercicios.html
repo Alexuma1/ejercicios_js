@@ -31,6 +31,7 @@
       if (typeof long !== 'number') return console.error(`${long} NO es del tipo numero.`)
       if (long === 0) return console.warn(`${long} NO puede ser igual a "0".`)
       if (long % 1 !== 0) return console.warn(`${long} NO puede ser un numero decimal.`)
+      if (Math.sign(long) === -1) return console.warn(`${long} NO puede ser un numero negativo.`)
       const textoRecortado = text.substring(0, long)
       console.info(`El texto: ${text} cortado en: ${long} caracteres nos arroja el texto: ${textoRecortado}`)
     }
@@ -54,6 +55,19 @@
 
 
 
+
+    // 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+    const repetirTexto = (text = '', repetidor = 0) => {
+      if (typeof text !== 'string') return console.error(`${text} NO es del tipo texto.`)
+      if (text.length === 0) return console.warn(`La cadena ${text}esta vacia.`)
+      if (typeof repetidor !== 'number') return console.error(`${repetidor} NO es del tipo numero.`)
+      if (repetidor === 0) return console.warn(`${repetidor} NO puede ser igual a "0".`)
+      if (repetidor % 1 !== 0) return console.warn(`${repetidor} NO puede ser un numero decimal.`)
+      if (Math.sign(repetidor) === -1) return console.warn(`${repetidor} NO puede ser un numero negativo.`)
+      const textoRepetido = text.repeat(repetidor)
+      console.info(`El texto a repetir es: ${text}y la cantidad de repeticiones son: ${repetidor} quedaria asi: ${textoRepetido}`)
+    }
+    // repetirTexto('Hola mundo ', 2)
 
 
   </script>
