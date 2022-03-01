@@ -169,25 +169,28 @@
     // proxy = es un nuevo mecanismo, que crea un objeto basado en un objeto inicial. El proxy genera una copia y lo mantiene vinculado a el objeto inicial
     // y con el manejador (handler) realizamos validaciones
 
-    const personas = {
-      nombre: '', apellido: '', edad: undefined
-    }
-    const manejador = {
-      set(obj, prop, valor) {
-        if (Object.keys(obj).indexOf(prop) === -1) {
-          return console.error(`La propiedad "${prop}" no existe dentro de personas`)
-        }
-        obj[prop] = valor
-      }
-    }
+    // const personas = {
+    //   nombre: '', apellido: '', edad: undefined
+    // }
+    // const manejador = {
+    //   set(obj, prop, valor) {
+    //     if (Object.keys(obj).indexOf(prop) === -1) {
+    //       return console.error(`La propiedad "${prop}" no existe dentro de personas`)
+    //     }
+    //     obj[prop] = valor
+    //   }
+    // }
 
-    const jonh = new Proxy(personas, manejador)
-    jonh.nombre = 'Jonh'
-    jonh.apellido = 'Mircha'
-    jonh.edad = 35
-    jonh.twitter = '@jonhMircha'
-    console.log(jonh)
-    console.log(personas)
+    // const jonh = new Proxy(personas, manejador)
+    // jonh.nombre = 'Jonh'
+    // jonh.apellido = 'Mircha'
+    // jonh.edad = 35
+    // jonh.twitter = '@jonhMircha'
+    // console.log(jonh)
+    // console.log(personas)
+
+
+
 
   </script>
 </body>
