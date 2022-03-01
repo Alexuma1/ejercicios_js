@@ -83,7 +83,25 @@
       const textoInvertido = text.split('').reverse().join('')
       console.log(`Texto a invertir: ${text} y el resultado es: ${textoInvertido}`)
     }
-    invertirTexto('Hola Mundo')
+    // invertirTexto('Hola Mundo')
+
+
+
+
+
+    // 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+    const textoRepetido = (text = '', palabra = '') => {
+      if (typeof text !== 'string' || typeof palabra !== 'string') return console.error(`NO es del tipo texto.`)
+      if (text.length === 0 || palabra.length === 0) return console.warn(`La cadena esta vacia.`)
+      const arr = text.split(' ')
+      let contador = 0
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === palabra) contador++
+        console.log(arr[i])
+      }
+      console.info(`El texto que buscamos coincidencias es: ${text} y la palabra a coincidir es: ${palabra}, la cantidad de coincidencias son: ${contador}`)
+    }
+    textoRepetido('hola mundo adios mundo', 'mundo')
   </script>
 </body>
 
