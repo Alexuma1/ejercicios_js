@@ -59,45 +59,87 @@
     // console.log(listadoDeSymbol)
 
 
-    /* Set es la nueva array de em6 no puede contener valores duplicados*/
-    const set = new Set([1, 2, 3, 4, 5, 5, {}, {}, true, false, true, []])
+    // /* Set es la nueva array de em6 no puede contener valores duplicados*/
+    // const set = new Set([1, 2, 3, 4, 5, 5, {}, {}, true, false, true, []])
 
-    // para medir el contenido no usamos .lenght usamos .size
-    console.log(set)
-    console.log(set.size)
+    // // para medir el contenido no usamos .lenght usamos .size
+    // console.log(set)
+    // console.log(set.size)
 
-    //para agregar nuevos elementos dentro del array
-    const set2 = new Set()
-    set2.add(1)
-    set2.add(2)
-    set2.add(3)
-    set2.add(3)
-    set2.add('hola')
-    set2.add('hola')
-    set2.add({})
+    // //para agregar nuevos elementos dentro del array
+    // const set2 = new Set()
+    // set2.add(1)
+    // set2.add(2)
+    // set2.add(3)
+    // set2.add(3)
+    // set2.add('hola')
+    // set2.add('hola')
+    // set2.add({})
 
-    console.log(set2)
-    console.log(set2.size)
+    // console.log(set2)
+    // console.log(set2.size)
 
-    //para recorrer el set
-    for (el of set) {
-      console.log(el)
+    // //para recorrer el set
+    // for (el of set) {
+    //   console.log(el)
+    // }
+
+    // //para iterar con la posicion de un elemento no funciona el set[0], utilizamos la propiedad Array.from
+    // let arr = Array.from(set)
+    // console.log(arr[0])
+
+    // //para borrar un elemento del Set
+    // set2.delete('hola')
+    // console.log(set2)
+
+    // //para saber si tenemos un elemento dentro del Set nos devolvera true si existe sino false
+    // console.log(set.has(1))
+
+    // //para limpiar un Set
+    // set2.clear()
+    // console.log(set2)
+
+
+    //iterable es el elemento cual contenido se puede recorrer
+
+    //iterador es el mecanismo que lo recorre
+
+    // const iterable = [1, 2, 3, 4, 5]
+    // const iterableText = 'h'
+    // const iterador = iterable[Symbol.iterator]()
+    // const iteradorText = iterableText[Symbol.iterator]()
+    // console.log(iterable)
+    // console.log(iterableText)
+    // console.log(iterador.next())
+    // console.log(iteradorText.next())
+    // console.log(iterador.next())
+    // console.log(iteradorText.next())
+
+    //para iterar seria poco practico hacerlo 1 x 1, la mejor opcion seria crear un ciclo
+    // let next = iterador.next()
+    // while (!next.done) {
+    //   console.log(next.value)
+    //   next = iterador.next()
+    // }
+
+    //function generator, es una funcion que se utiliza para trabajar de forma mas amigable con los iteradores
+    //vuelve iterable una funcion, te permite manejar asincronias
+
+    function* iterable() {
+      yield 'hola'
+      console.log('Paso el yield 1')
+      yield 'hola todos'
+      console.log('Paso el yield 2')
+      yield 'hola todos y todas '
+      console.log('Paso el yield 3')
+    }
+    let funcionIterable = iterable()
+    // console.log(funcionIterable.next())
+
+    for (let y of funcionIterable) {
+      console.log(y)
     }
 
-    //para iterar con la posicion de un elemento no funciona el set[0], utilizamos la propiedad Array.from
-    let arr = Array.from(set)
-    console.log(arr[0])
-
-    //para borrar un elemento del Set
-    set2.delete('hola')
-    console.log(set2)
-
-    //para saber si tenemos un elemento dentro del Set nos devolvera true si existe sino false
-    console.log(set.has(1))
-
-    //para limpiar un Set
-    set2.clear()
-    console.log(set2)
   </script>
 </body>
 
