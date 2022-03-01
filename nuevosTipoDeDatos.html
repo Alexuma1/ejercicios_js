@@ -140,6 +140,29 @@
       console.log(y)
     }
 
+    const arr = [...iterable()]
+    console.log(arr)
+
+    //creamos la funcion elevacion al cuadrado con generator, hay que tener mucho cuidado porque es una ejecucion asincronica no bloqueante
+    function cuadrado(valor) {
+      setTimeout(() => {
+        return console.log({ valor, resultado: valor * valor })
+      }, Math.random() * 1000);
+    }
+
+    function* generador() {
+      console.log('Inicia generador')
+      yield cuadrado(0)
+      yield cuadrado(2)
+      yield cuadrado(3)
+      yield cuadrado(4)
+      yield cuadrado(5)
+      console.log('Finaliza generador')
+    }
+    let gen = generador()
+    for (let y of gen) {
+      console.log(y)
+    }
   </script>
 </body>
 
