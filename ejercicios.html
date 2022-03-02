@@ -132,8 +132,21 @@
       const palabraEliminada = text.replace(reg, '')
       console.log(`las palabras a modificar son: ${text} eliminando los caracteres: ${palabra} y quedaria asi: ${palabraEliminada}`)
     }
-    eliminarCaracteres('xyz1,xyz2,xyz3,xyz4,xyz5,xyz6,xyz7,xyz8', 'xyz')
+    // eliminarCaracteres('xyz1,xyz2,xyz3,xyz4,xyz5,xyz6,xyz7,xyz8', 'xyz')
 
+
+
+
+    // 9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+    const numeroAleatorio = (numMax = 0, numMin = 0) => {
+      if (typeof numMax !== 'number' || typeof numMin !== 'number') return console.error(`NO es del tipo numero.`)
+      if (numMin === 0 || numMax === 0) return console.warn(`NO puede ser igual a "0".`)
+      if (numMin % 1 !== 0 || numMax % 1 !== 0) return console.warn(`NO puede ser un numero decimal.`)
+      if (Math.sign(numMin) === -1 || Math.sign(numMax) === -1) return console.warn(`"${num}" NO puede ser un numero negativo.`)
+      const aleatorio = Math.round(Math.random() * (numMax - numMin) + numMin)
+      console.log(`Obtenemos un numero Aleatorio: ${aleatorio} entre ${numMin} y ${numMax}`)
+    }
+    // numeroAleatorio(500, 600)
 
 
 
