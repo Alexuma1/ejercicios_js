@@ -74,7 +74,7 @@
 
 
     // 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
-    //split() separará cada carácter de una cadena y lo convertirá en un array.
+    //split("") separará cada carácter de una cadena y lo convertirá en un array.
     //reverse() tomará esa matriz e invertirá los elementos dentro de ella.
     //join() unirá los caracteres que han sido invertidos por la función reverse().
     const invertirTexto = (text = '') => {
@@ -149,6 +149,26 @@
     // numeroAleatorio(500, 600)
 
 
+
+
+
+    // 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+    const capicua = (num = 0) => {
+      if (typeof num !== 'number') return console.error(`NO es del tipo numero.`)
+      if (num === 0) return console.warn(`NO puede ser igual a "0".`)
+      if (num % 1 !== 0) return console.warn(`NO puede ser un numero decimal.`)
+      if (Math.sign(num) === -1) return console.warn(`"NO puede ser un numero negativo.`)
+      num = num.toString()
+      if (num.length === 1) return console.warn("NO puede ser un numero menor a 2 digitos")
+      const textCapicua = num.split("").reverse().join("")
+      // console.log(num.length)
+      if (num === textCapicua) {
+        console.info(`El numero "${num}" invertido es igual al numero: "${textCapicua}" por lo tanto son Capicua`)
+      } else {
+        console.info(`El numero "${num}" invertido NO es igual al numero: "${textCapicua}" por lo tanto NO son Capicua`)
+      }
+    }
+    capicua(2324)
 
           // if (!(arr instanceof Array)) return console.error(`NO es del tipo Array.`)
           //   if (arr.length === 0) return console.warn('El Array esta vacio')
