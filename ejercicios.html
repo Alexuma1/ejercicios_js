@@ -212,6 +212,30 @@
 
 
 
+
+    // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+    const parOImpar = (num = 0) => {
+      if (typeof num !== 'number') return console.error(`NO es del tipo numero.`)
+      if (num === 0) return console.warn(`NO puede ser igual a "0".`)
+      if (num % 1 !== 0) return console.warn(`NO puede ser un numero decimal.`)
+      if (Math.sign(num) === -1) return console.warn(`"NO puede ser un numero negativo.`)
+      if (num % 2 === 0) return console.info(`"${num}" es Par`)
+      else return console.info(`"${num}" es Impar`);
+    }
+    parOImpar(2)
+
+
+
+
+
+    // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+    const conversionGrados
+
+
+
+
+
+
           // if (!(arr instanceof Array)) return console.error(`NO es del tipo Array.`)
           //   if (arr.length === 0) return console.warn('El Array esta vacio')
           //   for (text of arr) {

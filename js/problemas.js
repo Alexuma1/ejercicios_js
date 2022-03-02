@@ -1,9 +1,3 @@
-const numeroPrimo = -4;
-
-// 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
-
-const numeroParImpar = -18;
-
 // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
 
 const grados = 23;
