@@ -1,12 +1,3 @@
-const minimo = 501;
-const maximo = 601;
-
-const numero = 505;
-
-// 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
-
-const numeroFactorial = 5;
-
 // 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
 
 const numeroPrimo = -4;

@@ -161,14 +161,31 @@
       num = num.toString()
       if (num.length === 1) return console.warn("NO puede ser un numero menor a 2 digitos")
       const textCapicua = num.split("").reverse().join("")
-      // console.log(num.length)
       if (num === textCapicua) {
         console.info(`El numero "${num}" invertido es igual al numero: "${textCapicua}" por lo tanto son Capicua`)
       } else {
         console.info(`El numero "${num}" invertido NO es igual al numero: "${textCapicua}" por lo tanto NO son Capicua`)
       }
     }
-    capicua(2324)
+    // capicua(2324)
+
+
+
+
+
+    // 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+    const factorial = (num = 0) => {
+      if (typeof num !== 'number') return console.error(`NO es del tipo numero.`)
+      if (num === 0) return console.warn(`NO puede ser igual a "0".`)
+      if (num % 1 !== 0) return console.warn(`NO puede ser un numero decimal.`)
+      if (Math.sign(num) === -1) return console.warn(`"NO puede ser un numero negativo.`)
+      let numFactorial = num
+      for (let i = num - 1; i > 0; i--) {
+        numFactorial = numFactorial * i
+      }
+      return console.info(`El factorial de ${num} es: ${numFactorial}`)
+    }
+    // factorial(3)
 
           // if (!(arr instanceof Array)) return console.error(`NO es del tipo Array.`)
           //   if (arr.length === 0) return console.warn('El Array esta vacio')
