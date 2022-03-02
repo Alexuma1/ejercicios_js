@@ -241,7 +241,38 @@
       if (text === 'F') console.info(`"${num}°${text}" es igual a: "${celsius}°C"`)
       if (text === 'C') console.info(`" "${num}°${text}" es igual a: "${fahrenheit}°F"`)
     }
-    conversionGrados(32, 'C')
+    // conversionGrados(32, 'C')
+
+
+
+
+
+    // 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+    const conversionNumeros = (num = 0, base = 0) => {
+      if (typeof num !== 'number' || typeof base !== 'number') return console.error(`NO es del tipo numero.`)
+      if (Math.sign(num) === -1 || Math.sign(base) === -1) return console.warn(`"NO puede ser un numero negativo.`)
+      let resultado = 0, i = 0, resultadoArray = [], numDecimal = num, numBinario
+      if (base === 2) {
+        numBinario = num.toString()
+        numBinario = numBinario.split('').reverse()
+        for (let i = 0; i < numBinario.length; i++) {
+          resultado += (Math.pow(2, i) * numBinario[i])
+        }
+        console.log(`El numero "${num}" Base 2 es igual a: "${resultado}" Base 10`)
+      }
+      if (base === 10) {
+        while (numDecimal > 0) {
+          if (numDecimal % 2 === 0) resultadoArray[i] = 0
+          else resultadoArray[i] = 1
+          numDecimal = Math.floor(numDecimal / 2)
+          i++;
+        }
+        resultadoArray = resultadoArray.reverse().join('')
+        console.log(`El numero "${num}" Base 10 es igual a: "${resultadoArray}" Base 2`)
+      }
+
+    }
+    conversionNumeros(10110, 2)
 
 
 
