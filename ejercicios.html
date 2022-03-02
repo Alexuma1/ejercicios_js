@@ -187,6 +187,31 @@
     }
     // factorial(3)
 
+
+
+
+
+    // 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+    const primo = (num = 0) => {
+      if (typeof num !== 'number') return console.error(`NO es del tipo numero.`)
+      if (num === 0) return console.warn(`NO puede ser igual a "0".`)
+      if (num % 1 !== 0) return console.warn(`NO puede ser un numero decimal.`)
+      if (Math.sign(num) === -1) return console.warn(`"NO puede ser un numero negativo.`)
+      let cont = 0
+      for (let i = 1; i < num; i++) {
+        if (num % i === 0) {
+          cont++
+          if (cont > 1)
+            return console.log(`"${num}" NO Es un numero primo`)
+        }
+      }
+      return console.log(`"${num}" Es un numero primo`)
+    }
+    // primo(2)
+
+
+
+
           // if (!(arr instanceof Array)) return console.error(`NO es del tipo Array.`)
           //   if (arr.length === 0) return console.warn('El Array esta vacio')
           //   for (text of arr) {
