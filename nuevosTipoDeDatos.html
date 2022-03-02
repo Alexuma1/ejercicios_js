@@ -193,19 +193,74 @@
 
 
     // propiedades dinamicas
-    let aleatorio = Math.round(Math.random() * 100 + 5)
-    const objUsuarios = {
-      propiedad: 'valor',
-      [`id_${aleatorio}`]: 'valor aleatorio'
+    // let aleatorio = Math.round(Math.random() * 100 + 5)
+    // const objUsuarios = {
+    //   propiedad: 'valor',
+    //   [`id_${aleatorio}`]: 'valor aleatorio'
+    // }
+
+    // console.log(objUsuarios)
+
+    // const usuarios = ['Jonh', 'Alex', 'Alfredo', 'Ricardo', 'elmomo']
+    // usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario)
+
+    // console.log(objUsuarios)
+
+
+
+
+    console.log(this)
+    // this. hace referencia al objeto global
+    console.log(window)
+    // invocamos windows
+    console.log(this === window)
+    // en js this. y windows son lo mismo en el contexto global
+    this.nombre = 'Contexto Global'
+    console.log(this.nombre)
+
+    function imprimir() {
+      console.log(this.nombre)
+    }
+    imprimir()
+    // en esta variable de bloque el this. hace referencia a ella
+    const obj = {
+      nombre: 'Contexto Objeto',
+      imprimir: function () {
+        console.log(this.nombre)
+      }
     }
 
-    console.log(objUsuarios)
+    obj.imprimir()
 
-    const usuarios = ['Jonh', 'Alex', 'Alfredo', 'Ricardo', 'elmomo']
-    usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario)
+    const obj2 = {
+      nombre: 'Contexto Objeto 2',
+      imprimir
+    }
 
-    console.log(objUsuarios)
 
+    obj2.imprimir()
+
+    // otro ejemplo de variable de bloque (scout), pero la arrow function ignora las variables de bloque y utiliza las variable de entorno (window)
+    const obj3 = {
+      nombre: 'Contexto Objeto 3',
+      imprimir: () => {
+        console.log(this.nombre)
+      }
+    }
+
+    obj3.imprimir()
+    // en esta funcion creamos una variable de entorno, pero el entorno de la 2da variable es null asi que this. buscara la variable global
+    function Persona(nombre) {
+      this.nombre = nombre
+
+      // return console.log(this.nombre)
+      return function () {
+        console.log(this.nombre)
+      }
+    }
+
+    let jon = new Persona('Jon')
+    jon()
 
 
   </script>
