@@ -1,8 +1,3 @@
-// 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
-
-const texto06 = "hola mundo adios mundo";
-const palabraRepetida = "mundo";
-
 // 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
 
 const texto07 = "salas operando casa cosa ufa bob";
