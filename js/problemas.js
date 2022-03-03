@@ -1,11 +1,3 @@
-const cadenaTexto = "hola mundo";
-
-// 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
-
-const nombreValido = "Jonathan MirCha";
-
-// 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
-
 const emailValido = "alex@gmail.com";
 
 // 1) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
