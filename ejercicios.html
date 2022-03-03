@@ -381,6 +381,22 @@
 
 
     // 22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+    const numMaxMin = (arr = []) => {
+      if (!(arr instanceof Array)) return console.error(`NO es del tipo Array.`)
+      if (arr.length === 0) return console.warn('El Array esta vacio')
+      for (num of arr) {
+        if (typeof num !== 'number') return console.warn('El Array admite solo datos tipo texto')
+        if (num.length === 0) return console.warn('El texto, dentro del Array, esta vacio')
+      }
+      let numMax = Math.max(...arr), numMin = Math.min(...arr);
+      console.log(`En el Array: "${arr}"\nEl numero Mayor es: "${numMax}"\nEl numero Menor es: "${numMin}"`)
+    }
+    // numMaxMin([1, 4, 5, 99, -60])
+
+
+
+
+
 
 
           // if (!(arr instanceof Array)) return console.error(`NO es del tipo Array.`)
