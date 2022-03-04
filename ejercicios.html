@@ -409,9 +409,27 @@
       let arrImpar = arr.filter(el => el % 2 === 1)
       console.log(`Los numeros Pares son: "${arrPar}\nLos numeros Impares son: "${arrImpar}\nDe el Array: "${arr}"`)
     }
-    separandoParImpar([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
+    // separandoParImpar([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
 
 
+
+
+
+    // 24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+    const numAsDes = (arr = []) => {
+      if (!(arr instanceof Array)) return console.error(`NO es del tipo Array.`)
+      if (arr.length === 0) return console.warn('El Array esta vacio')
+      for (num of arr) {
+        if (typeof num !== 'number') return console.warn('El Array admite solo datos tipo texto')
+        if (num.length === 0) return console.warn('El texto, dentro del Array, esta vacio')
+      }
+      let numAs = arr.map(el => el).sort((a, b) => { return a - b })
+      let numDes = arr.map(el => el).sort((a, b) => { return b - a })
+      console.log(numAs)
+      console.log(numDes)
+      console.log(`El Array numerico ${arr}\nOrdenado de forma Ascendente nos da ${numAs}\nOrdenado de forma Desendente nos da ${numDes}`)
+    }
+    // numAsDes([7, 5, 7, 8, 6, 10, 15, 1000, -1, -32])
 
 
 
