@@ -423,22 +423,57 @@
         if (typeof num !== 'number') return console.warn('El Array admite solo datos tipo texto')
         if (num.length === 0) return console.warn('El texto, dentro del Array, esta vacio')
       }
-      let numAs = arr.map(el => el).sort((a, b) => { return a - b })
-      let numDes = arr.map(el => el).sort((a, b) => { return b - a })
-      console.log(numAs)
-      console.log(numDes)
-      console.log(`El Array numerico ${arr}\nOrdenado de forma Ascendente nos da ${numAs}\nOrdenado de forma Desendente nos da ${numDes}`)
+      const obj = {
+        numAs: arr.map(el => el).sort((a, b) => { return a - b }),
+        numDes: arr.map(el => el).sort((a, b) => { return b - a })
+      }
+
+      console.log(`El Array numerico ${arr}\nOrdenado de forma Ascendente nos da ${obj.numAs}\nOrdenado de forma Desendente nos da ${obj.numDes}`)
     }
-    // numAsDes([7, 5, 7, 8, 6, 10, 15, 1000, -1, -32])
+    // numAsDes([7, 5, 7, 8, 6, 10, 15, 1000, -1, -32])*-++90
 
 
 
-          // if (!(arr instanceof Array)) return console.error(`NO es del tipo Array.`)
-          //   if (arr.length === 0) return console.warn('El Array esta vacio')
-          //   for (text of arr) {
-          //     if (typeof text !== 'string') return console.warn('El Array admite solo datos tipo texto')
-          //     if (text.length === 0) return console.warn('El texto, dentro del Array, esta vacio')
-          //   }
+
+
+
+    // 25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+    const eliminarDuplicados = (arr = []) => {
+      if (!(arr instanceof Array)) return console.error(`NO es del tipo Array.`)
+      if (arr.length === 0) return console.warn('El Array esta vacio')
+      for (el of arr) {
+        if (el.length === 0) return console.warn('El elemento dentro del Array esta vacio')
+      }
+      let eliDuplicados = arr.map(el => el)
+        , com = 0
+      for (let i = 0; i < eliDuplicados.length; i++) {
+        for (let com = 0; com < eliDuplicados.length; com++) {
+          if (eliDuplicados[i] === eliDuplicados[com] && i !== com) {
+            eliDuplicados.splice(com, 1)
+            com = 0
+          }
+        }
+      }
+      console.log(`El Array principal es: [${arr}]\nQuitando los duplicados: [${eliDuplicados}]`)
+    }
+    // eliminarDuplicados(['x', 10, 'x', 2, '10', 10, true, true])
+
+
+
+
+
+
+    // 26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+    const promedio = (arr = []) => {
+      if (!(arr instanceof Array)) return console.error(`NO es del tipo Array.`)
+      if (arr.length === 0) return console.warn('El Array esta vacio')
+      for (num of arr) {
+        if (typeof num !== 'number') return console.warn('El Array admite solo datos tipo texto')
+        if (num.length === 0) return console.warn('El texto, dentro del Array, esta vacio')
+      }
+
+    }
+    promedio([9, 8, 7, 6, 5, 4, 3, 2, 1, 0])
   </script>
 </body>
 
