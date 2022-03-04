@@ -10,9 +10,41 @@
 
 <body>
   <script>
-    let noDefinida = undefined
-    if (typeof noDefinida === "undefined") console.log(noDefinida)
-    if (noDefinida === null) console.log(noDefinida)
+    // verificacion si es null && undefined
+    // let noDefinida = undefined
+    // if (typeof noDefinida === "undefined") console.log(noDefinida)
+    // if (noDefinida === null) console.log(noDefinida)
+
+    //uso basico del operador igualdad estricto
+    // let a, b
+    // if (a === b) console.info('Usamos el operador')
+
+    //uso de operadores relacionales
+    // b = 1, a = 0
+    // if (a < b) console.info('usamos el operador menor que ( a < b )')
+
+    //reconociendo las diferencias entre null && undefind
+    // let a = null, b;
+    // variable sin valor es undefind
+    // variable con valor nulo es null
+
+    // crear fecha new date
+    // let hoy = new Date()
+    // console.log(hoy)
+
+    //Tiempo ah pasado basico date
+    let hoy = Date.now()
+    let miCumple = new Date(1991, 10, 24)
+    miCumple.getTime()
+    let aniosMs = 1000 * 60 * 60 * 24 * 365
+    let difMS = hoy - miCumple
+    let difAnios = Math.floor(difMS / aniosMs)
+
+
+    console.log(difAnios)
+
+
+
   </script>
 </body>
 
