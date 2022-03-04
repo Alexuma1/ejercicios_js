@@ -457,7 +457,7 @@
       let eliDuplicados = [...new Set(arr.map(el => el))]
       console.log(`El Array principal es: [${arr}]\nQuitando los duplicados: [${eliDuplicados}]`)
     }
-    eliminarDuplicados(['x', 10, 'x', 2, '10', 10, true, true])
+    // eliminarDuplicados(['x', 10, 'x', 2, '10', 10, true, true])
 
 
 
@@ -472,7 +472,10 @@
         if (typeof num !== 'number') return console.warn('El Array admite solo datos tipo texto')
         if (num.length === 0) return console.warn('El texto, dentro del Array, esta vacio')
       }
-
+      let promedio = 0
+      arr.forEach(el => { promedio += el });
+      promedio = promedio / arr.length
+      console.log(`El promedio de: ${arr}\n es: ${promedio}`)
     }
     promedio([9, 8, 7, 6, 5, 4, 3, 2, 1, 0])
   </script>

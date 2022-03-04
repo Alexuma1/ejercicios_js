@@ -1,7 +1,3 @@
-// 26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
-
-const promedio = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
-
 // 27) Programa una clase llamada Pelicula.
 
 // La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
