@@ -444,19 +444,20 @@
       for (el of arr) {
         if (el.length === 0) return console.warn('El elemento dentro del Array esta vacio')
       }
-      let eliDuplicados = arr.map(el => el)
-        , com = 0
-      for (let i = 0; i < eliDuplicados.length; i++) {
-        for (let com = 0; com < eliDuplicados.length; com++) {
-          if (eliDuplicados[i] === eliDuplicados[com] && i !== com) {
-            eliDuplicados.splice(com, 1)
-            com = 0
-          }
-        }
-      }
+      // let eliDuplicados = arr.map(el => el)
+      //   , com = 0
+      // for (let i = 0; i < eliDuplicados.length; i++) {
+      //   for (let com = 0; com < eliDuplicados.length; com++) {
+      //     if (eliDuplicados[i] === eliDuplicados[com] && i !== com) {
+      //       eliDuplicados.splice(com, 1)
+      //       com = 0
+      //     }
+      //   }
+      // }
+      let eliDuplicados = [...new Set(arr.map(el => el))]
       console.log(`El Array principal es: [${arr}]\nQuitando los duplicados: [${eliDuplicados}]`)
     }
-    // eliminarDuplicados(['x', 10, 'x', 2, '10', 10, true, true])
+    eliminarDuplicados(['x', 10, 'x', 2, '10', 10, true, true])
 
 
 
