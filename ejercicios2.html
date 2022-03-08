@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+    textoAContar = 'Hola Mundo'
+    const contarCaracteres = (text = '') => {
+      if (typeof text !== 'string') console.error(`${text} NO es del tipo "string"`);
+      if (text.length === 0) console.warn(`Texto: "${text}" esta vacio, por favor ingresa caracteres`);
+      let cantidadDeCaracteres = text.length
+      console.info(`El texto: "${text}" contiene ${cantidadDeCaracteres} Caracteres`)
+    }
+    /*--------------------------------------------------------------------------------------------*/
+
+    contarCaracteres(textoAContar)
+  </script>
+</body>
+
+</html>
