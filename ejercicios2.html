@@ -11,16 +11,63 @@
 <body>
   <script>
     // 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
-    textoAContar = 'Hola Mundo'
+    const textoAContar = 'Hola Mundo'
     const contarCaracteres = (text = '') => {
       if (typeof text !== 'string') console.error(`${text} NO es del tipo "string"`);
       if (text.length === 0) console.warn(`Texto: "${text}" esta vacio, por favor ingresa caracteres`);
       let cantidadDeCaracteres = text.length
       console.info(`El texto: "${text}" contiene ${cantidadDeCaracteres} Caracteres`)
     }
+    // contarCaracteres(textoAContar)
     /*--------------------------------------------------------------------------------------------*/
-
-    contarCaracteres(textoAContar)
+    // 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+    const textoARecortar = 'Hola Mundo'
+    const recortarTexto = (text = '', num = undefined) => {
+      if (typeof text !== 'string') console.error(`${text} NO es del tipo "string"`);
+      if (text.length === 0) console.warn(`Texto: "${text}" esta vacio, por favor ingresa caracteres`);
+      if (typeof num !== 'number') console.error(`${num} NO es del tipo "Number"`)
+      if (num === 0) console.warn(`Debe ser un numero mayor a ${num}`)
+      if (Math.sign(num) === -1) console.warn(`${num} NO puede ser un numero negativo`)
+      if (num % 1 !== 0) console.warn(`${num} NO puede ser un numero decimal`)
+      let textoRecortado = text.substr(0, num)
+      console.info(`El texto: ${textoARecortar} \nRecortado en: ${num} Caracteres \nNos da: ${textoRecortado}`)
+    }
+    // recortarTexto(textoARecortar, 6)
+    /*--------------------------------------------------------------------------------------------*/
+    // 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+    const cadenaASeparar = 'hola que tal'
+    const separarCadena = (text = '', text2 = '') => {
+      if (typeof text !== 'string') console.error(`${text} NO es del tipo "string"`);
+      if (text.length === 0) console.warn(`Texto: "${text}" esta vacio, por favor ingresa caracteres`);
+      if (typeof text2 !== 'string') console.error(`${text2} NO es del tipo "string"`);
+      if (text2.length === 0) console.warn(`Texto: "${text2}" esta vacio, por favor ingresa caracteres`);
+      const cadenaAArray = text.split(text2)
+      console.info(`El texto: ${text}\nSeparado por: "${text2}"\nNos devuelve: ${cadenaAArray}`)
+    }
+    // separarCadena(cadenaASeparar, ' ')
+    /*--------------------------------------------------------------------------------------------*/
+    // 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+    const textoARepetir = 'Hola mundo '
+    const repetirTexto = (text = '', num = undefined) => {
+      if (typeof text !== 'string') console.error(`${text} NO es del tipo "string"`);
+      if (text.length === 0) console.warn(`Texto: "${text}" esta vacio, por favor ingresa caracteres`);
+      if (typeof num !== 'number') console.error(`${num} NO es del tipo "Number"`)
+      if (num === 0) console.warn(`Debe ser un numero mayor a ${num}`)
+      if (Math.sign(num) === -1) console.warn(`${num} NO puede ser un numero negativo`)
+      if (num % 1 !== 0) console.warn(`${num} NO puede ser un numero decimal`)
+      let textoRepetido = text.repeat(num)
+      console.info(`El texto: ${text}\nRepetido: '${num}' veces\nNos da: ${textoRepetido}`)
+    }
+    // repetirTexto(textoARepetir, 3)
+    /*--------------------------------------------------------------------------------------------*/
+    // 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+    const textoAInvertir = 'Hola mundo'
+    const invertirTexto = (text = '') => {
+      if (typeof text !== 'string') console.error(`${text} NO es del tipo "string"`);
+      if (text.length === 0) console.warn(`Texto: "${text}" esta vacio, por favor ingresa caracteres`);
+      textoAInvertir = 'hola gatos'
+      let textoInvertido = textoAInvertir.split('').reverse().to
+    }
   </script>
 </body>
 
