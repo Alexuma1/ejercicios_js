@@ -193,30 +193,56 @@
     /*--------------------------------------------------------------------------------------------*/
     // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
     /*t = temperature d = degrees*/
-    let t = 32, d = 'f', f = 0, c = 0
+    let t = 32, d = 'c', f = 0, c = 0
     /*We started the function to convert fahrenheit to celsius and celsius to fahrenheit*/
     const temperature = (n = undefined, t = '') => {
       /*We check that the data entered is correct.*/
       if (typeof n !== 'number') return console.error(`NO puede ser de otro tipo de dato que no sea "number"\n"${n}": NO es un "number"`)
       if (typeof t !== 'string') return console.error(`NO puede ser de otro tipo de dato que no sea "string"\n"${t}": NO es un "string"`)
-      if (t.length <= 0) return console.warn(`La cadena NO contiene caracteres`)
+      regExp = /[cf]{1}/gi.test(t)
+      if (regExp === false) return console.warn(`La cadena debe tener 1 caracter valido C o F`)
+      if (t.length < 0 || t.length > 1) return console.warn(`La cadena debe tener 1 caracter`)
       /*we do the operations*/
-      // t = t.toLowerCase()
-      // if (t === 'c') {
-      //   f = (n * 9 / 5) + 32
-      //   /*We print the result in the console */
-      //   return console.info(`${n}°C = ${f}°F`)
-      // }
-      // if (t === 'f') {
-      //   c = (n - 32) * 5 / 9
-      //   /*We print the result in the console */
-      //   return console.info(`${n}°F = ${c}°F`)
-      // }
-      /*another option*/
-      // regExp = 
+      t = t.toLowerCase()
+      if (t === 'c') {
+        f = (n * 9 / 5) + 32
+        /*We print the result in the console */
+        return console.info(`${n}°C = ${f}°F`)
+      }
+      if (t === 'f') {
+        c = (n - 32) * 5 / 9
+        /*We print the result in the console */
+        return console.info(`${n}°F = ${c}°F`)
+      }
     }
+    // temperature(t, d)
+    /*--------------------------------------------------------------------------------------------*/
+    // 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+    const numberConversion = (n = 0, b = 0) => {
+      if (typeof n !== 'number' || typeof b !== 'number') return console.error(`NO es del tipo numero.`)
+      if (Math.sign(n) === -1 || Math.sign(b) === -1) return console.warn(`"NO puede ser un numero negativo.`)
+      let resultado = 0, resultadoArray = [], numDecimal = n, numBinario, i = 0
+      if (b === 2) {
+        numBinario = n.toString()
+        numBinario = numBinario.split('').reverse()
+        for (let i = 0; i < numBinario.length; i++) {
+          resultado += (Math.pow(2, i) * numBinario[i])
+        }
+        console.log(`El numero "${n}" Base 2 es igual a: "${resultado}" Base 10`)
+      }
+      if (b === 10) {
+        while (numDecimal > 0) {
+          if (numDecimal % 2 === 0) resultadoArray[i] = 0
+          else resultadoArray[i] = 1
+          numDecimal = Math.floor(numDecimal / 2)
+          i++;
+        }
+        resultadoArray = resultadoArray.reverse().join('')
+        console.log(`El numero "${n}" Base 10 es igual a: "${resultadoArray}" Base 2`)
+      }
 
-    temperature(t, d)
+    }
+    numberConversion(100, 10)
   </script>
 </body>
 
