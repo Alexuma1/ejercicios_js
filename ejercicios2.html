@@ -158,13 +158,12 @@
     // hallarFactorial(numeroFactorial)
     /*--------------------------------------------------------------------------------------------*/
     // 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
-    let numPrimo = 9
+    let numPrimo = 0
     const primo = (num = undefined) => {
       if (typeof num !== 'number') return console.error(`${num} NO es del tipo "Number"`)
       if (num === 0) return console.warn(`Debe ser un numero mayor a ${num}`)
       if (!Number.isInteger(num)) return console.warn(`${num} NO puede ser un numero decimal`)
       if (Math.sign(num) === 1) {
-        // console.log('entro')
         for (let i = 2; i < num; i++) {
           if (num % i === 0) return console.info(`"${num}" NO es un numero primo`)
         }
@@ -177,7 +176,47 @@
         console.info(`"${num}" Es un numero primo`)
       }
     }
-    primo(numPrimo)
+    // primo(numPrimo)
+    /*--------------------------------------------------------------------------------------------*/
+    // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+    let numeroAEvaluar = -3
+    const parImpar = (num = undefined) => {
+      if (typeof num !== 'number') return console.error(`${num} NO es del tipo "Number"`)
+      if (num === 0) return console.warn(`Debe ser un numero mayor a ${num}`)
+      if (!Number.isInteger(num)) return console.warn(`${num} NO puede ser un numero decimal`)
+      // console.log(num)
+      if (num % -2 === 0) return console.info(`"${num}" es Par`)
+      // console.log(-6 / -2)
+      return console.info(`"${num}" es Impar`)
+    }
+    // parImpar(numeroAEvaluar)
+    /*--------------------------------------------------------------------------------------------*/
+    // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+    /*t = temperature d = degrees*/
+    let t = 32, d = 'f', f = 0, c = 0
+    /*We started the function to convert fahrenheit to celsius and celsius to fahrenheit*/
+    const temperature = (n = undefined, t = '') => {
+      /*We check that the data entered is correct.*/
+      if (typeof n !== 'number') return console.error(`NO puede ser de otro tipo de dato que no sea "number"\n"${n}": NO es un "number"`)
+      if (typeof t !== 'string') return console.error(`NO puede ser de otro tipo de dato que no sea "string"\n"${t}": NO es un "string"`)
+      if (t.length <= 0) return console.warn(`La cadena NO contiene caracteres`)
+      /*we do the operations*/
+      // t = t.toLowerCase()
+      // if (t === 'c') {
+      //   f = (n * 9 / 5) + 32
+      //   /*We print the result in the console */
+      //   return console.info(`${n}°C = ${f}°F`)
+      // }
+      // if (t === 'f') {
+      //   c = (n - 32) * 5 / 9
+      //   /*We print the result in the console */
+      //   return console.info(`${n}°F = ${c}°F`)
+      // }
+      /*another option*/
+      // regExp = 
+    }
+
+    temperature(t, d)
   </script>
 </body>
 
